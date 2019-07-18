@@ -1,0 +1,32 @@
+:host {
+    //display: block;
+    background: black;
+    padding: 16px;
+}
+
+#logo {
+    width: 100pt;
+    height: auto;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    list-style: none;
+
+    margin: 0;
+    padding-inline-start: 0;
+
+    li {
+        color: white;
+        text-transform: uppercase;
+
+        // Add spacing between all list items.
+        &:not(:last-child) {
+            padding-right: 32pt;
+        }
+    }
+}
