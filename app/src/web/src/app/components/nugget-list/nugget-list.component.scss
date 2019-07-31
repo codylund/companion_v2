@@ -1,0 +1,67 @@
+$background-color: #14ace3;
+$metadata-background-color: #f0f0f0;
+
+$margin-nugget: 16pt;
+
+:host {
+    background-color: $background-color;
+
+    // Use flexbox to display rows/columns of nuggets.
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    // Apply top and left margin to container
+    // so we don't double-up margins between
+    // the nugget items.
+    padding-left: $margin-nugget;
+    padding-top: $margin-nugget;
+
+    // Make the nuggets fill the space.
+    & > * {
+        flex-grow: 1;
+        flex-basis: 0;
+        min-width: 400px;
+    }
+}
+
+$background-nugget: white;
+.nugget {
+    // Flexbox for consistent sizing.
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    background-color: $background-nugget;
+
+    // Container applies left and top margins
+    margin-right: 16pt;
+    margin-bottom: 16pt;
+
+    // Border and shadow for looks.
+    box-shadow: 0pt 1pt 1pt #202020;
+    border-radius: 4pt;
+
+    // Tint the background on hover.
+    &:hover {
+        background-color: darken($background-nugget, 3%);
+        cursor: pointer;
+    }
+
+    // Tint the background more on click.
+    &:active {
+        background-color: darken($background-nugget, 10%);
+    }
+}
+
+.thumbnail {
+    height: 300px;
+    background-size: cover;
+    // Match border radius of the container.
+    border-radius: 4pt 4pt 0 0;
+}
+
+app-metadata {
+    padding: 16pt;
+}

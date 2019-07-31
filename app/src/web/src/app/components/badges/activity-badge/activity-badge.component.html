@@ -1,0 +1,5 @@
+<div *ngIf="activityType" [ngSwitch] = "activityType">
+    <!-- TODO: search for nuggests by activity type onclick -->
+    <img *ngSwitchCase="activityTypeEnum.Bike" src="assets/img/bike.svg" alt="A bike travelling over non-treacherous terrain." />
+    <img *ngSwitchCase="activityTypeEnum.Moto" src="assets/img/moto.svg" alt="A snazzy moped. Definitely never crashed by dozens of western tourists." />
+</div>

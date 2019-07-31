@@ -11,24 +11,24 @@
         }
       },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "src/main",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/web",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "outputPath": "dist/www",
+            "index": "src/main/index.html",
+            "main": "src/main/main.ts",
+            "polyfills": "src/main/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/main/favicon.ico",
+              "src/main/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/main/styles.scss",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
@@ -37,8 +37,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/main/environments/environment.ts",
+                  "with": "src/main/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -80,16 +80,16 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "main": "src/test/test.ts",
+            "polyfills": "src/main/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/main/favicon.ico",
+              "src/main/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/main/styles.scss",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []

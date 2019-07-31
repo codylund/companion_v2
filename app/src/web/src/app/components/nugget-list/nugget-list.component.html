@@ -1,0 +1,11 @@
+<div *ngFor="let n of nuggets">
+        <div class="nugget" [routerLink]="['/nugget/', n.metadata.id]">
+            <div class="thumbnail" [style.background-image]="getSanitizedUrl(n.content.photos[0].url)"></div>
+            <app-metadata [metadata]="n.metadata" [config]="metadataConfig"></app-metadata>
+        </div>
+</div>
+<!-- Add some extra divs as spacers. These will prevent items in the last row from increasing in size
+    if there are fewer than needed. -->
+<div></div>
+<div></div>
+<div></div>

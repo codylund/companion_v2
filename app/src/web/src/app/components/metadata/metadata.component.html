@@ -1,0 +1,25 @@
+<div id="metadata">
+    <h1 *ngIf="metadata.title" [style.font-size]="config.titleFontSizePt + 'pt'">{{ metadata.title }}</h1>
+    <h2 *ngIf="config.showLocation" [style.font-size]="config.locationFontSizePt + 'pt'"><i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ metadata.location.url }}">{{ metadata.location.name }}</a></h2>
+    <h2 *ngIf="config.showDate" [style.font-size]="config.dateFontSizePt + 'pt'"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;{{ metadata.date.toLocaleDateString("en-us", { year: 'numeric', month: 'long', day: 'numeric' }) }}</h2>            
+    <!-- Display the tags -->
+    <ul *ngIf="config.showTags" id="tags">
+        <!-- TODO: search for nuggets by tag onclick -->
+        <li *ngFor="let tag of metadata.tags">
+            <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ tag }}
+        </li>
+    </ul>
+</div>
+
+<!-- Fill out all the extra space in the flexbox. -->
+<div *ngIf="config.spread" class="flex-fill"></div>
+
+<!-- Show the activity badges. -->
+<div *ngIf="config.showActivities">
+    <!-- Display the activity type icons -->
+    <ul id="activityTypes" *ngFor="let activityType of metadata.activityTypes">
+        <li>
+            <app-activity-badge [activityType]="activityType"></app-activity-badge>
+        </li>
+    </ul>
+</div>
