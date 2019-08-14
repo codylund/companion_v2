@@ -6,7 +6,8 @@
         "preserveConstEnums": true,
         "sourceMap": true,
         "lib": [
-            "es2018"
+            "es2018",
+            "dom"
         ]
     }
 }

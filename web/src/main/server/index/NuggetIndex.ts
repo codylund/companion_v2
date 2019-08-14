@@ -1,5 +1,5 @@
-import { Nugget } from '../../../shared/model';
-import { ArrayUtils } from '../util/ArrayUtils'
+import { Nugget } from '../../shared/model';
+import { ArrayUtils } from '../utils/ArrayUtils'
 import { IndexOption } from './IndexOption';
 
 export class NuggetIndex<T> {

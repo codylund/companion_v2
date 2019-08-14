@@ -1,0 +1,10 @@
+<div class="item" *ngFor='let photo of photos'>
+    <img (click)="setFullscreenPhoto(photo)" class="image" src="{{ photo.url }}" />
+    <!-- <div *ngIf="photo.caption && photo.caption.length > 0" class="caption">{{ photo.caption }}</div> -->
+</div>
+
+<div *ngIf="getFullscreenPhoto()" (click)="hideFullscreenPhoto()" class="fs">
+    <div class="image-container">
+        <img class="image" src="{{ getFullscreenPhoto().url }}" />
+    </div>
+</div>

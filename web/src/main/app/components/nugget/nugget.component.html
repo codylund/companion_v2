@@ -1,17 +1,14 @@
 <!-- Use a conditional container because the nugget is loaded asynchronously. -->
-<div *ngIf="nugget" id="container">
+<div *ngIf="nugget" class="container">
 
-    <!-- Banner image for the nugget. -->
-    <app-gallery #gallery [photos]="nugget.content.photos"></app-gallery>
+    <app-metadata [metadata]="nugget.metadata" [config]="metadataConfig"></app-metadata>
 
-    <!-- All the information about the nugget. -->
-    <div id="content">
-
-        <!-- Flexbox for title, date, and activity badges. -->
-        <app-metadata [metadata]="nugget.metadata"></app-metadata>
-
-        <!-- The good stuff. -->
-        <div [innerHtml]="getContentHtml()"></div>
-
+    <div class="synopsis">
+        <div>{{ nugget.content.synopsis }}</div>
     </div>
+
+    <div>
+        <app-gallery-fs [photos]="nugget.content.photos"></app-gallery-fs>
+    </div>
+
 </div>

@@ -1,32 +1,36 @@
 {
-    "id": "0",
-    "title": "Phong Nha-Ke Bang Loop",
-    "date": "6/6/2018",
-    "activityTypes": [
-        5
-    ],
-    "location": {
-        "name": "Phong Nha-Ke Bang National Park, Vietnam",
-        "url": "https://goo.gl/maps/xzWjYggQpqgtKGiV7"
+    "metadata": {
+        "id": "0",
+        "title": "Phong Nha-Ke Bang Loop",
+        "date": "6/6/2018",
+        "activityTypes": [
+            5
+        ],
+        "location": {
+            "name": "Phong Nha-Ke Bang National Park, Vietnam",
+            "url": "https://goo.gl/maps/xzWjYggQpqgtKGiV7"
+        },
+        "tags": [
+            "Vietnam",
+            "Motorbike",
+            "National Park"
+        ]
     },
-    "synopsis": "A 50km paved loop that dips into the eastern part of Phong Nha-Ke Bang National Park.",
-    "tags": [
-        "Vietnam",
-        "Motorbike",
-        "National Park"
-    ],
-    "photos" : [
-        {
-            "url" : "https://lh3.googleusercontent.com/5G1W8Bd0usS0PYJvcm9km0gJZg8_O9bVlkoaSD_C2MarBUCyidapOkoS2e8vaVqVGxQVq6E4byH9Jjg-4HvJ5-w1YFSoVztxLBObLqI47qR6rCVVGSraPvwyur4srqSK0aRmoGB3yBMSxxNv8AqhrVwJQ9S21VSM6-vZiQtTwGjweaPuJdQU9H4C9jjybJ7YuicQzyr2FIamYW9GK0EVkmiYfa-5GXYZCqtx7m1smg6jMuwJMcKVWqeZNVI35eWXC55DTzFGHIt0v08IaAFHM7yfmN9hlpg4Ff8TziBMQYorr699e8tnVl-5Gx6itlTA8pLG78t9zbvE1WthRO3R0E6mZQMvj6MQGz_cSJhxjjyL7pNB7-QYr5VJApmoHarLIaeqiBH8H1QTdulGzQKia3_gC-nZIFZTuYFByGzZ5i5zAxMhCB-gwO1GQ6lGlIVGAzth5HhPKhV_F8hHUZATFmHIEjcnONG0Cdstjw5IMxMsATG9fAZxVOfKhAT4wwlqXC9Xgem1jQShuAOg2UpZ0VFskX2T6BFZd3FaeMtCDawioYNtFBmr5LY1eS4TkgxNqjEpPsWyLDFwg-LVpu4Z7R3o5icYVR9JcoCGup9mqAa8MtNLi4oBRjBk6JXv2KavXmL5vH8_SM9zoWKMoNNQRqx15UFl3VmJFL52l5KI5pgkwvSF_KCYJ9KrE0JQU87HVFwc_oRulZEHMV36PA=w2806-h1578-no"
-        },
-        {
-            "caption" : "Impenetrable jungle growth.",
-            "url": "https://lh3.googleusercontent.com/C4SwmDYMRDv2DGaYhMx56REsXi2YvgB3HdyXCVjaRKLc4r5_uTaYjrocWC5VQEPvaRVJVCiW_HTcrgZ5VRQMXLcsbU2kWnp2uRC1SUIfr-VVqkhdTeiY5Ub5KcEzkDkML-TbglsdLuScPahn5Qn9H4_ZNOGLFwQnzkZSiOnovfohqJn6t0KiSIE17HAPwDc9Y_85qws2Aq0UQrbr197KbUPt_F4uReFnrhQqUHI7Afa9g7DKsS9pQnU258opRqVrjemJS5uwXny3D6dCcMn5N2EKAiBA1PS0bbNuD_6PhqhmCOd0agXLzaGaNnNwid-maPN6g-Crzf-B73wP_znYBkkSHP6wJ2-_mtWa5IooId67ukpoAdM94JIiNh6sz3BD20iPndePH0YPrLsu2SHqRyPGusdZ19yA88PZZVLsPXyHpOX4HudI_zoTwjFdZdDYMdT3A_Yx043ImEMz5n6XXJP3btEONxqkANzg4KFgqX49029D03yn1vfjSwLCbScMW8tlEeoX_-1j8vET7B4530GGmYH20HcfJY3pOohCARh9Ya_Qbmcr0hWOWBrGjvmFh1v5VMhdlcjf30gRFI3C2H6g_SOpm3wvbs6AORhKSteuzTZAxVOf-G9ehHSy3NfQWx69lh_goMdg2e2nBjkoQLUAWC5cY994lg3vpMUm3UiVuActxs4OouR7FBJQWXyaPe3_eqsFn5pQ8w15Yg=w2806-h1578-no"
-        },
-        {
-            "caption" : "Feeling powerful on the 50cc hog.",
-            "url" : "https://lh3.googleusercontent.com/pqSX8Bl9V-CmXhK12QdhN4KS8xZW1q7TmSGjVhvcMj5MPEPb6GB8mfSG3hLsu8KMFmcZryIsaSInIzWO8dEajk1bsXnRexA19sxk1BzeHjK0v2GMnfHouVG6cyYFeIcVJMpRgLHpu2Vsx9LLOxh42maFOAq6acQZbLj-ye-CU5Bdr-ewS9z-M8CQ5QIhst3Y5ucNVdkp38WgOrHAea59fUbDH0P7H9lToj10bsCOmX_SqLb0u-YyUSuTVGQD_bABtIocuVsonIfmUH6OjWthg3z9aoW64CbatVh2Muez4tlHOoFjIl_0i_Ge4twFw8Nmttq4EVchXqa5TRVD2aKT9GubXKGzM5jbbI2cdArJ9vbbzNoKv0dp6YJYDtPcNzBYIj_2rEGSvzX24IzlIEp975sE0E4kDecMrjbZa9sycylclLJ93LrxzluXwIDHhXMIuYOtnIgjmipw8Dx1016sdsxZ7-qst-IYFIiGYV4HDOy0rugdqA_PGP04A8GgHMnQ1sCkX1H7uQtOm1thtBlcrkX-9w9Yhee5d9jp8F0jwg4J1ckxbnQPgVG3u3E1EZuw8X3F2EOwla9GZgkWVxWLWUnoxit4AT73Zp70pgSLcubeLpR7t6GdNf1bnN76eKU1GMhKNMI93ogBHkXoJD5Zc-bb7LoHg5ywjpmIammSo7PzPReQ1MI25wyThWfJ9rQXxBjTkQ34qLjvr0SayA=w2806-h1578-no"
-        }
-    ],
-    "body": "<p>\r\n<b>Arrive in Phonga Nha<\/b> via your preferred mode of transit. Most cross-country, multi-stop bus tickets \r\n(available for sale at virtually every hostel) include a stop here.\r\n<\/p>\r\n\r\n<p>\r\nIn town, <b>acquire a motorbike<\/b> from a reputable dealer. Ask your host for a reference. They know who's \r\ngot the good stuff. Some will require you to leave your passport as collateral for the bike. This is not \r\nadvisable. In lieu of this invaluable document, some will take a VND deposit equivalent to roughly \r\nUSD$40. The cash-strapped traveller may have success leaving photocopies of a passport.\r\n<\/p>\r\n\r\n<p>\r\n<b>Fuel up the bike.<\/b> The tank likely only has enough fuel to get to the nearest petrol station.\r\nIgnore the street vendors and only purchase petrol from the pump. The \r\n<a target=\"_blank\" href=\"https:\/\/goo.gl\/maps\/gGXaQRs86ASKiKk57\">primary station<\/a> is located on the north end of \r\ntown.\r\n<\/p>\r\n\r\n<p>\r\nThe loop connects many <b>points of interest<\/b> in the park. These include:\r\n<\/p>\r\n<ul>\r\n    <li>Phong Nha Botanic Garden<\/li>\r\n    <li>Paradise Cave, Dark Cave, and many other caves<\/li>\r\n    <li>Mooc Mo Spring<\/li>\r\n<\/ul>\r\n\r\n<p>\r\nLonely Planet covers these attractions and many more  \r\n<a target=\"_blank\" href=\"https:\/\/www.lonelyplanet.com\/vietnam\/north-central-vietnam\/phong-nha-cave\">here<\/a>. \r\nPriortize your favorites.\r\n<\/p>\r\n\r\n<h2>Directions<\/h2>\r\n<p><b>Hit the road<\/b>. As you drive along the loop, look out for signage for your points of interest.\r\nAll are clearly marked.<\/p>\r\n<ol>\r\n    <li>Take DT20 south through town along the Song River for no more than a few km. This will vary depending on where you are located in town.<\/li>\r\n    <li>As you exit town, take a hard left continuing on DT20.<\/li>\r\n    <li>Follow along DT20 for roughly 30km.<\/li>\r\n    <li>At the fork, take a right on QL15 (aka Ho Chi Minh Highway West).<\/li>\r\n    <li>Follow QL15 for roughly 21km.<\/li>\r\n    <li>Shortly after exiting the park, turn right on QL16.<\/li>\r\n    <li>Follow QL16 for roughly 11km<\/li>\r\n    <li>Immediately after crossing the Song River, reenter town by turning right on DT20<\/li>\r\n<\/ol>"
+    "content": {
+        "synopsis": "A 50km paved loop that dips into the eastern part of Phong Nha-Ke Bang National Park.",
+        "photos" : [
+            {
+                "url" : "https://lh3.googleusercontent.com/5G1W8Bd0usS0PYJvcm9km0gJZg8_O9bVlkoaSD_C2MarBUCyidapOkoS2e8vaVqVGxQVq6E4byH9Jjg-4HvJ5-w1YFSoVztxLBObLqI47qR6rCVVGSraPvwyur4srqSK0aRmoGB3yBMSxxNv8AqhrVwJQ9S21VSM6-vZiQtTwGjweaPuJdQU9H4C9jjybJ7YuicQzyr2FIamYW9GK0EVkmiYfa-5GXYZCqtx7m1smg6jMuwJMcKVWqeZNVI35eWXC55DTzFGHIt0v08IaAFHM7yfmN9hlpg4Ff8TziBMQYorr699e8tnVl-5Gx6itlTA8pLG78t9zbvE1WthRO3R0E6mZQMvj6MQGz_cSJhxjjyL7pNB7-QYr5VJApmoHarLIaeqiBH8H1QTdulGzQKia3_gC-nZIFZTuYFByGzZ5i5zAxMhCB-gwO1GQ6lGlIVGAzth5HhPKhV_F8hHUZATFmHIEjcnONG0Cdstjw5IMxMsATG9fAZxVOfKhAT4wwlqXC9Xgem1jQShuAOg2UpZ0VFskX2T6BFZd3FaeMtCDawioYNtFBmr5LY1eS4TkgxNqjEpPsWyLDFwg-LVpu4Z7R3o5icYVR9JcoCGup9mqAa8MtNLi4oBRjBk6JXv2KavXmL5vH8_SM9zoWKMoNNQRqx15UFl3VmJFL52l5KI5pgkwvSF_KCYJ9KrE0JQU87HVFwc_oRulZEHMV36PA=w2806-h1578-no"
+            },
+            {
+                "caption" : "Impenetrable jungle growth.",
+                "url": "https://lh3.googleusercontent.com/C4SwmDYMRDv2DGaYhMx56REsXi2YvgB3HdyXCVjaRKLc4r5_uTaYjrocWC5VQEPvaRVJVCiW_HTcrgZ5VRQMXLcsbU2kWnp2uRC1SUIfr-VVqkhdTeiY5Ub5KcEzkDkML-TbglsdLuScPahn5Qn9H4_ZNOGLFwQnzkZSiOnovfohqJn6t0KiSIE17HAPwDc9Y_85qws2Aq0UQrbr197KbUPt_F4uReFnrhQqUHI7Afa9g7DKsS9pQnU258opRqVrjemJS5uwXny3D6dCcMn5N2EKAiBA1PS0bbNuD_6PhqhmCOd0agXLzaGaNnNwid-maPN6g-Crzf-B73wP_znYBkkSHP6wJ2-_mtWa5IooId67ukpoAdM94JIiNh6sz3BD20iPndePH0YPrLsu2SHqRyPGusdZ19yA88PZZVLsPXyHpOX4HudI_zoTwjFdZdDYMdT3A_Yx043ImEMz5n6XXJP3btEONxqkANzg4KFgqX49029D03yn1vfjSwLCbScMW8tlEeoX_-1j8vET7B4530GGmYH20HcfJY3pOohCARh9Ya_Qbmcr0hWOWBrGjvmFh1v5VMhdlcjf30gRFI3C2H6g_SOpm3wvbs6AORhKSteuzTZAxVOf-G9ehHSy3NfQWx69lh_goMdg2e2nBjkoQLUAWC5cY994lg3vpMUm3UiVuActxs4OouR7FBJQWXyaPe3_eqsFn5pQ8w15Yg=w2806-h1578-no"
+            },
+            {
+                "caption" : "Feeling powerful on the 50cc hog.",
+                "url" : "https://lh3.googleusercontent.com/pqSX8Bl9V-CmXhK12QdhN4KS8xZW1q7TmSGjVhvcMj5MPEPb6GB8mfSG3hLsu8KMFmcZryIsaSInIzWO8dEajk1bsXnRexA19sxk1BzeHjK0v2GMnfHouVG6cyYFeIcVJMpRgLHpu2Vsx9LLOxh42maFOAq6acQZbLj-ye-CU5Bdr-ewS9z-M8CQ5QIhst3Y5ucNVdkp38WgOrHAea59fUbDH0P7H9lToj10bsCOmX_SqLb0u-YyUSuTVGQD_bABtIocuVsonIfmUH6OjWthg3z9aoW64CbatVh2Muez4tlHOoFjIl_0i_Ge4twFw8Nmttq4EVchXqa5TRVD2aKT9GubXKGzM5jbbI2cdArJ9vbbzNoKv0dp6YJYDtPcNzBYIj_2rEGSvzX24IzlIEp975sE0E4kDecMrjbZa9sycylclLJ93LrxzluXwIDHhXMIuYOtnIgjmipw8Dx1016sdsxZ7-qst-IYFIiGYV4HDOy0rugdqA_PGP04A8GgHMnQ1sCkX1H7uQtOm1thtBlcrkX-9w9Yhee5d9jp8F0jwg4J1ckxbnQPgVG3u3E1EZuw8X3F2EOwla9GZgkWVxWLWUnoxit4AT73Zp70pgSLcubeLpR7t6GdNf1bnN76eKU1GMhKNMI93ogBHkXoJD5Zc-bb7LoHg5ywjpmIammSo7PzPReQ1MI25wyThWfJ9rQXxBjTkQ34qLjvr0SayA=w2806-h1578-no"
+            }
+        ],
+        "body": "<p>\r\n<b>Arrive in Phonga Nha<\/b> via your preferred mode of transit. Most cross-country, multi-stop bus tickets \r\n(available for sale at virtually every hostel) include a stop here.\r\n<\/p>\r\n\r\n<p>\r\nIn town, <b>acquire a motorbike<\/b> from a reputable dealer. Ask your host for a reference. They know who's \r\ngot the good stuff. Some will require you to leave your passport as collateral for the bike. This is not \r\nadvisable. In lieu of this invaluable document, some will take a VND deposit equivalent to roughly \r\nUSD$40. The cash-strapped traveller may have success leaving photocopies of a passport.\r\n<\/p>\r\n\r\n<p>\r\n<b>Fuel up the bike.<\/b> The tank likely only has enough fuel to get to the nearest petrol station.\r\nIgnore the street vendors and only purchase petrol from the pump. The \r\n<a target=\"_blank\" href=\"https:\/\/goo.gl\/maps\/gGXaQRs86ASKiKk57\">primary station<\/a> is located on the north end of \r\ntown.\r\n<\/p>\r\n\r\n<p>\r\nThe loop connects many <b>points of interest<\/b> in the park. These include:\r\n<\/p>\r\n<ul>\r\n    <li>Phong Nha Botanic Garden<\/li>\r\n    <li>Paradise Cave, Dark Cave, and many other caves<\/li>\r\n    <li>Mooc Mo Spring<\/li>\r\n<\/ul>\r\n\r\n<p>\r\nLonely Planet covers these attractions and many more  \r\n<a target=\"_blank\" href=\"https:\/\/www.lonelyplanet.com\/vietnam\/north-central-vietnam\/phong-nha-cave\">here<\/a>. \r\nPriortize your favorites.\r\n<\/p>\r\n\r\n<h2>Directions<\/h2>\r\n<p><b>Hit the road<\/b>. As you drive along the loop, look out for signage for your points of interest.\r\nAll are clearly marked.<\/p>\r\n<ol>\r\n    <li>Take DT20 south through town along the Song River for no more than a few km. This will vary depending on where you are located in town.<\/li>\r\n    <li>As you exit town, take a hard left continuing on DT20.<\/li>\r\n    <li>Follow along DT20 for roughly 30km.<\/li>\r\n    <li>At the fork, take a right on QL15 (aka Ho Chi Minh Highway West).<\/li>\r\n    <li>Follow QL15 for roughly 21km.<\/li>\r\n    <li>Shortly after exiting the park, turn right on QL16.<\/li>\r\n    <li>Follow QL16 for roughly 11km<\/li>\r\n    <li>Immediately after crossing the Song River, reenter town by turning right on DT20<\/li>\r\n<\/ol>"
+    }
 }

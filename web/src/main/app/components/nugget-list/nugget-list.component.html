@@ -1,11 +1,16 @@
-<div *ngFor="let n of nuggets">
-        <div class="nugget" [routerLink]="['/nugget/', n.metadata.id]">
-            <div class="thumbnail" [style.background-image]="getSanitizedUrl(n.content.photos[0].url)"></div>
-            <app-metadata [metadata]="n.metadata" [config]="metadataConfig"></app-metadata>
-        </div>
+<div class="nuggetList">
+    <div *ngFor="let n of nuggets">
+            <div class="nugget">
+                <div class="thumbnail" [routerLink]="['/nugget/', n.metadata.id]" [style.background-image]="getSanitizedUrl(n.content.photos[0].url)"></div>
+                <app-metadata [metadata]="n.metadata" [config]="metadataConfig"></app-metadata>
+            </div>
+    </div>
+    <!-- Add some extra divs as spacers. These will prevent items in the last row from increasing in size
+        if there are fewer than needed. -->
+    <div class="moreButton" *ngIf="isMore" (click)="loadNextPage()">
+        <div class="moreButtonText">See More</div>
+    </div>    
+    <div class="filler"></div>
+    <div class="filler"></div>
+    <div class="filler"></div>
 </div>
-<!-- Add some extra divs as spacers. These will prevent items in the last row from increasing in size
-    if there are fewer than needed. -->
-<div></div>
-<div></div>
-<div></div>

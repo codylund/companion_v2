@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivityBadgeComponent } from './activity-badge.component';
+import { WhoComponent } from './who.component';
 
-describe('ActivityBadgeComponent', () => {
-  let component: ActivityBadgeComponent;
-  let fixture: ComponentFixture<ActivityBadgeComponent>;
+describe('WhoComponent', () => {
+  let component: WhoComponent;
+  let fixture: ComponentFixture<WhoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActivityBadgeComponent ]
+      declarations: [ WhoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActivityBadgeComponent);
+    fixture = TestBed.createComponent(WhoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

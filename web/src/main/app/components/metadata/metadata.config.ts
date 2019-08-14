@@ -1,15 +1,21 @@
 export class MetadataConfig {
-    showActivities: boolean = true;
+    showActivities?: boolean = false;
     
-    titleFontSizePt: Number = 24;
+    showBack?: boolean = false;
 
-    showLocation: boolean = true;
-    locationFontSizePt: Number = 12;
+    titleFontSizePt?: Number = 16;
+    titleFontColor?: string = 'black';
 
-    showDate: boolean = true;
-    dateFontSizePt: Number = 12;
+    showLocation?: boolean = true;
+    locationFontSizePt?: Number = 10;
+    subtitleFontColor?: string = 'black';
 
-    showTags: boolean = true;
+    showDate?: boolean = true;
+    dateFontSizePt?: Number = 10;
 
-    spread: boolean = true;
+    showTags?: boolean = true;
+
+    spread?: boolean = true;
+
+    alignCenter?: boolean = false;
 }

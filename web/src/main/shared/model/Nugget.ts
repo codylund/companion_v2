@@ -6,8 +6,9 @@ export class Nugget {
     metadata: NuggetMetadata;
 
     constructor(json: any) {
-        this.content = new NuggetContent(json);
-        this.metadata = new NuggetMetadata(json);
+        console.log(json);
+        this.content = new NuggetContent(json.content);
+        this.metadata = new NuggetMetadata(json.metadata);
     }
 
     static compareByDate(a: Nugget, b: Nugget): number {

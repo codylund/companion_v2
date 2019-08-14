@@ -1,0 +1,46 @@
+:host {
+    width: 100%;
+}
+
+#exitButton {
+    margin: auto;
+    width: fit-content;
+    color: white;
+    font-size: 32pt;
+}
+
+.item {
+    max-width: 960px;
+    margin: 16pt; 
+    padding: 0;
+}
+
+.image-container {
+    padding: 16pt;
+    margin: auto;
+    height: fit-content;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.caption {
+    //width: 100vw;
+    //height: auto;
+    //padding: 16pt;
+    color: white;
+}
+
+.fs {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000aa;
+    z-index: 10000;
+    position: fixed;
+    //visibility: hidden;
+    top: 0; left: 0;
+
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Location } from '@angular/common'
 import { NuggetMetadata } from '../../../shared/model';
 import { MetadataConfig } from './metadata.config';
 
@@ -13,7 +14,10 @@ export class MetadataComponent implements OnInit {
 
   @Input() config: MetadataConfig = new MetadataConfig();
 
-  constructor(private el: ElementRef) { }
+  constructor(
+    private el: ElementRef,
+    private location: Location
+  ) { }
 
   ngOnInit() {
   }
@@ -28,5 +32,9 @@ export class MetadataComponent implements OnInit {
   setConfig(config: MetadataConfig) {
     this.config = config
     console.log(this.config.showActivities)
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

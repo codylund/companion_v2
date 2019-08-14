@@ -1,19 +1,19 @@
-import { ActivityType, Nugget } from '../../../shared/model'
+import { Nugget } from '../../shared/model'
 import { NuggetIndex } from './NuggetIndex';
-import { ArrayUtils } from '../util/ArrayUtils'
+import { ArrayUtils } from '../utils/ArrayUtils'
 import { IgnoreCaseIndexOption } from './IgnoreCaseIndexOption';
 import { NoPuncIndexOption } from './NoPuncIndexOption';
 
 export class CompositeNuggetIndex {
 
     private idIndex = new NuggetIndex<string>(new IgnoreCaseIndexOption());
+    private dateList = new Array<Nugget>();
     private tagIndex = new NuggetIndex<string>(
-        // 
+        // Ignore case.
         new IgnoreCaseIndexOption(),
         // Ignore punctuation.
         new NoPuncIndexOption()
     );
-    private activityTypeIndex = new NuggetIndex<ActivityType>();
     
     constructor(nuggets: Nugget[]) {
         nuggets.forEach((nugget) => {
@@ -22,29 +22,35 @@ export class CompositeNuggetIndex {
             // Populate the by-id index.
             this.idIndex.put(metadata.id, nugget);
             
+            // Populate the by-date index.
+            this.dateList.push(nugget);
+
             // Populate the by-tag index.
             metadata.tags.forEach((tag) => this.tagIndex.put(tag.toLowerCase(), nugget));
-            
-            // Populate the by-activity-type index.
-            metadata.activityTypes.forEach((type) => this.activityTypeIndex.put(type, nugget));
         });
+
+        // Sort the date list
+        this.dateList.sort((a, b) => a.metadata.date.getMilliseconds() - b.metadata.date.getMilliseconds());
+    }
+
+    hasNugget(id: string): boolean {
+        return this.idIndex.get(id).length > 0;
     }
 
     getNugget(id: string): Nugget {
         return this.idIndex.get(id)[0];
     }
 
-    queryNuggets(query: string, tags: string[], activityTypes: ActivityType[]): Nugget[] {
+    latestNuggets() {
+        return this.dateList;
+    }
+
+    queryNuggets(query: string, tags: string[]): Nugget[] {
         var lists = new Array<Nugget[]>();
         
         if (tags && tags.length > 0) {
             // Get all the nuggets with the provided tags.
             lists.push(this.tagIndex.get(...tags));
-        }
-        
-        if (activityTypes && activityTypes.length > 0) {
-            // Get all the nuggets with the provided activity types
-            lists.push(this.activityTypeIndex.get(...activityTypes))
         }
         
         if (lists.length <= 0) {

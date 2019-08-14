@@ -4,6 +4,7 @@ import { NuggetService } from 'src/main/app/core/service/nugget.service';
 import { NuggetQueryType } from 'src/main/app/core/service/NuggetQueryType';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MetadataConfig } from '../metadata/metadata.config';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-nugget-list',
@@ -12,28 +13,55 @@ import { MetadataConfig } from '../metadata/metadata.config';
 })
 export class NuggetListComponent implements OnInit {
 
+  private nuggetPageIndex = 0;
   nuggets: Nugget[] = [];
 
-  metadataConfig: MetadataConfig;
+  isLoading = true;
+  isMore = false;
 
-  constructor(private nuggetService: NuggetService, private domSanitizer: DomSanitizer) { 
-    this.metadataConfig = new MetadataConfig();
-    this.metadataConfig.showLocation = true;
-    this.metadataConfig.showActivities = false;
-    this.metadataConfig.showDate = true;
+  metadataConfig = new MetadataConfig();
+
+  constructor(
+    private route: ActivatedRoute,
+    private nuggetService: NuggetService, 
+    private domSanitizer: DomSanitizer
+  ){ 
     this.metadataConfig.showTags = false;
-
-    this.metadataConfig.titleFontSizePt = 16;
-    this.metadataConfig.locationFontSizePt =  10;
-    this.metadataConfig.dateFontSizePt = 10;
   }
 
   ngOnInit() {
-    this.nuggetService.getNuggetPage(NuggetQueryType.ByNew, 0).forEach(element => {
-      element.subscribe(nugget => this.nuggets.push(nugget));
-    });
+    this.loadNextPage();
   }
   
+  loadNextPage() {
+    console.log(`Loading page ${ this.nuggetPageIndex }`);
+
+    // We are loading a page of nuggets.
+    this.isLoading = true;
+
+    // We don't know if there are more pages yet.
+    this.isMore = false;
+
+    // Request the next nugget page.
+    this.nuggetService.getNuggetPage(NuggetQueryType.ByNew, this.nuggetPageIndex)
+      .subscribe(nuggetPage => {
+        console.log(nuggetPage.toString());
+
+        nuggetPage.nuggets.forEach((nugget) => {
+          this.nuggets.push(nugget);
+        });
+
+        // We aren't loading more nuggets at the moment.
+        this.isLoading = false;
+
+        // Check if there are yet more nuggets to load.
+        this.isMore = nuggetPage.pageIndex < nuggetPage.totalPages - 1;
+
+        // Next time, load the next nugget.
+        this.nuggetPageIndex = nuggetPage.pageIndex + 1;
+      });
+  }
+
   getSanitizedUrl(url: string) {
     return this.domSanitizer.bypassSecurityTrustStyle('url(' + url + ')');
   }

@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NuggetService } from '../../core/service/nugget.service';
 import { Nugget } from '../../../shared/model';
-import { GalleryComponent } from '../gallery/gallery.component';
-import { MetadataComponent } from '../metadata/metadata.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MetadataConfig } from '../metadata/metadata.config';
 
 @Component({
   selector: 'app-nugget',
@@ -18,42 +17,17 @@ export class NuggetComponent implements OnInit {
    */
   nugget?: Nugget;
 
-  /**
-   * The gallery displaying all the current nugget's images.
-   */
-  private gallery?: GalleryComponent;
-  @ViewChild(GalleryComponent, { static: false }) 
-  set setGallery(gallery: GalleryComponent) {
-    if (!gallery)
-      return;
-    this.gallery = gallery;
-    this.offsetMetadata();
-  }
-
-  /**
-   * The current nugget's metadata.
-   */
-  private metadata?: MetadataComponent;
-  @ViewChild(MetadataComponent, { static: false })
-  set setMetadata(metadata: MetadataComponent) {
-    if (!metadata)
-      return;
-    this.metadata = metadata;
-    this.offsetMetadata();
-  };
-
-  private offsetMetadata() {
-    if (!this.gallery || !this.metadata)
-      return;
-    console.log(this.gallery.getHeight());
-    this.gallery.setHeight(this.gallery.getHeight() - this.metadata.getHeight());
-  }
+  metadataConfig =  new MetadataConfig();
 
   constructor(
     private route: ActivatedRoute,
     private nuggetService: NuggetService,
     private domSanitizer: DomSanitizer
-  ) { }
+  ) { 
+    this.metadataConfig.titleFontSizePt = 28;
+    this.metadataConfig.locationFontSizePt = 14;
+    this.metadataConfig.dateFontSizePt = 12;
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap) => {
@@ -63,6 +37,7 @@ export class NuggetComponent implements OnInit {
         console.error("No ID was specified. This should never happen.");
         id = '0';
       }
+
       // Request the nugget from the server.
       this.nuggetService.getNugget(id).subscribe(nugget => {
         console.log(`Received nugget: ${ JSON.stringify(nugget) }`)

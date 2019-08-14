@@ -5,10 +5,8 @@ export class NuggetMetadata {
     title: string;
     date: Date;
     location: string;
-    activityTypes: ActivityType[];
     tags: string[];
-    thumbnailPath: string;
-    filename?: string;
+    activityTypes: ActivityType[];
 
     constructor(json: any) {
         this.id = json.id;
@@ -17,6 +15,5 @@ export class NuggetMetadata {
         this.location = json.location;
         this.tags = json.tags;
         this.activityTypes = json.activityTypes
-        this.thumbnailPath = json.photos[0].url;
     }
 }
