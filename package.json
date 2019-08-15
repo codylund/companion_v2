@@ -11,7 +11,7 @@
     "build:server": "tsc -p ./tsconfig.server.local.json",
     "clean:content": "rm -rf ./dist/content",
     "rebuild:content": "npm run clean:content && npm run build:content",
-    "start": "npm run build && npm run start:server",
+    "start": "npm run build:app:prod && npm run build:content && npm run build:server && npm run start:server",
     "start:server:local": "set PORT=8080 && npm run start:server",
     "start:server": "node ./dist/server/index.js --port $PORT --static ./dist/www --content ./dist/content/posts"
   },
