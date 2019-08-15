@@ -1,31 +1,27 @@
-# Companion v2
-A reinvisioned [Companion]. Now enables providing more contextual information about an image(s) or a video.
-It's essentially a blog, but I'd prefer not to call it that.
+# Web
 
-## Repo Map
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 
-### [`/designs`](/designs)
+## Development server
 
-Contains Affinity Photo file(s) for custom-made icons, logos, etc.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### [`/server`](/server)
+## Code scaffolding
 
-Handles HTTP requests for blog content. Also enables searching. Currently implemented as Firebase Functions.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-**Technology**: Typescript-based NPM module.
+## Build
 
-### [`/shared`](/shared)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-Shared models and logic consume by two or more modules.
+## Running unit tests
 
-**Technology**: Typescript-based NPM module.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### [`/web`](/web)
+## Running end-to-end tests
 
-The front-end web client that queries the server for content and shows it to the user.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-**Technology**: Angular.
+## Further help
 
-
-<!-- Links -->
-[Companion]: https://github.com/codylund/companion
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
