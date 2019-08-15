@@ -3,15 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "npm-run-all build:*",
-    "build:prod": "",
+    "build": "npm run build:app:prod && npm run build:content && npm run build:server",
     "build:app": "ng build",
     "build:app:prod": "ng build --prod",
     "build:content": "cp -R ./src/main/content ./dist/content",
     "build:server": "tsc -p ./tsconfig.server.local.json",
     "clean:content": "rm -rf ./dist/content",
     "rebuild:content": "npm run clean:content && npm run build:content",
-    "start": "npm install && npm run build:app:prod && npm run build:content && npm run build:server && npm run start:server",
+    "start": "npm run start:server",
     "start:server:local": "set PORT=8080 && npm run start:server",
     "start:server": "node ./dist/server/index.js --port $PORT --static ./dist/www --content ./dist/content/posts"
   },
