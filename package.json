@@ -9,6 +9,7 @@
     "build:content": "cp -R ./src/main/content ./dist/content",
     "build:server": "tsc -p ./tsconfig.server.local.json",
     "clean:content": "rm -rf ./dist/content",
+    "dev": "ng build --watch & npm run start:server:local",
     "rebuild:content": "npm run clean:content && npm run build:content",
     "start": "npm run start:server",
     "start:server:local": "set PORT=8080 && npm run start:server",

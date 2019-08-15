@@ -3,7 +3,7 @@ import { NuggetPage } from '../../shared/model/NuggetPage';
 
 export class PageUtils {
 
-    private static NUGGETS_PER_PAGE = 2;
+    private static NUGGETS_PER_PAGE = 10;
     
     constructor() { }
 
