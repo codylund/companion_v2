@@ -14,7 +14,7 @@ export class MiddlewareProvider {
         return [
             Express.static(this.serverConfig.static),
             Cors(),
-            BodyParser(),
+            BodyParser.json(),
         ];
     }
 }

@@ -17,7 +17,7 @@ export class NuggetProviderFactory {
             return new NuggetProviderImpl(this.http, "http://localhost", 8080);
         } else {
             // TODO update this with the appropriate url and port.
-            return new NuggetProviderImpl(this.http, "TODO", 443);
+            return new NuggetProviderImpl(this.http, "https://codylund.heroku.com");
         }
     }
 }

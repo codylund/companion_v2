@@ -6,7 +6,6 @@ export class Nugget {
     metadata: NuggetMetadata;
 
     constructor(json: any) {
-        console.log(json);
         this.content = new NuggetContent(json.content);
         this.metadata = new NuggetMetadata(json.metadata);
     }

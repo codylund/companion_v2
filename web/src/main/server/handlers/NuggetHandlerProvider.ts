@@ -9,7 +9,6 @@ export default class NuggetHandlerProvider implements HandlerProvider {
     ) { }
 
     getHandler(): RequestHandler {
-        console.log("here");
         return (req: Request, res: Response, next: NextFunction) => {
             var nuggetId = req.params["id"];
             if (!this.index.hasNugget(nuggetId)) {

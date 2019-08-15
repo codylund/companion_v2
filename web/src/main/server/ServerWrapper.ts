@@ -31,7 +31,7 @@ export class ServerWrapper {
 
         // Set up all the GET routes.
         this.getHandlers.forEach((val) => {
-            console.log(`GET ${ val.getRoute() }`);
+            console.log(`Init handler GET ${ val.getRoute() }`);
             this.server.get(val.getRoute(), val.getHandler());
         });
 
@@ -42,7 +42,7 @@ export class ServerWrapper {
 
         // Set up all the POST routes.
         this.postHandlers.forEach((val) => {
-            console.log(`POST ${ val.getRoute() }`);
+            console.log(`Init handler POST ${ val.getRoute() }`);
             this.server.post(val.getRoute(), val.getHandler());
         });
     }
@@ -50,7 +50,7 @@ export class ServerWrapper {
     private listen() {
         this.config.ports.forEach((port) => {
             this.server.listen(port, () => {
-                console.log( `server started at http://localhost:${ port }` );
+                console.log( `Listening on port ${ port }.` );
             });
         });
     }

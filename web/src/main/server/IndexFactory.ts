@@ -12,7 +12,7 @@ export class IndexFactory {
         return new CompositeNuggetIndex(
             readdirSync(contentDir)
                 .map((file) => {
-                    console.log(`Reading file ${ file }`);
+                    console.log(`Adding json file to index: ${ file }`);
                     return readFileSync(join(contentDir, file), 'utf8');
                 })
                 .map((val) => JSON.parse(val))

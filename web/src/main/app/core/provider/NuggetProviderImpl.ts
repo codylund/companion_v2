@@ -10,7 +10,7 @@ export class NuggetProviderImpl implements NuggetProvider {
     constructor(
         private http: HttpClient,
         private host: string,
-        private port: number
+        private port?: number
     ) { }
 
     getNugget(id: string) {
@@ -21,8 +21,6 @@ export class NuggetProviderImpl implements NuggetProvider {
 
     getLatest(pageIndex: number): Observable<NuggetPage>  {
         var url = this.getLatestUrl(pageIndex);
-        console.log(`GET ${ url }`);
-
         return this.http.get(url).pipe(map(res => new NuggetPage(res)));
     }
 
@@ -31,10 +29,18 @@ export class NuggetProviderImpl implements NuggetProvider {
     }
 
     private getNuggetRequestUrl(id: string) {
-        return `${ this.host }:${ this.port }/api/nugget/${ id }`;
+        return `${ this.getHost() }/api/nugget/${ id }`;
     }
 
     private getLatestUrl(pageIndex: number) {
-        return `${ this.host }:${ this.port }/api/latest?page=${ pageIndex }`;
+        return `${ this.getHost() }/api/latest?page=${ pageIndex }`;
+    }
+
+    private getHost() {
+        var host = this.host; 
+        if (this.port) {
+            host += `:${ this.port }`;
+        }
+        return host;
     }
 }
