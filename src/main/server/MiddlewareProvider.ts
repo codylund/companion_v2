@@ -16,7 +16,7 @@ export class MiddlewareProvider {
             Express.static(this.serverConfig.static),
             Cors(),
             BodyParser.json(),
-            HTTPS()
+            HTTPS({ trustProtoHeader: true })
         ];
     }
 }
