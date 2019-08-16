@@ -13,10 +13,10 @@ export class MiddlewareProvider {
 
     get(): RequestHandler[] {
         return [
+            HTTPS({ trustProtoHeader: true }),
             Express.static(this.serverConfig.static),
             Cors(),
             BodyParser.json(),
-            HTTPS({ trustProtoHeader: true })
         ];
     }
 }
