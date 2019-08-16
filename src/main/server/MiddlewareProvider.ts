@@ -3,6 +3,7 @@ import * as Cors from "cors";
 import * as BodyParser from "body-parser";
 import { RequestHandler } from 'express';
 import { ServerConfig } from './ServerConfig';
+import { HTTPS } from 'express-sslify';
 
 export class MiddlewareProvider {
 
@@ -15,6 +16,7 @@ export class MiddlewareProvider {
             Express.static(this.serverConfig.static),
             Cors(),
             BodyParser.json(),
+            HTTPS()
         ];
     }
 }
