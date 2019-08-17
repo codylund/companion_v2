@@ -15,35 +15,43 @@
     }
 }
 
+.heading {
+
+
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+
+    padding: 8px;
+    margin-bottom: 8px;
+
+    h2 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        font-size: 18pt;
+        font-family: 'Merriweather', serif;
+        text-align: left;
+    }
+}
+
+
 .media {
     display: flex;
     width:100%;
     height:auto;
     background-color:transparent;
     text-align:center;
-}
 
+    video {
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+        min-height: 500px;
+    }
+}
 
     .row {
 
         padding: 32px;
-
-        .heading {
-
-            border-bottom: 3px solid black;
-            border-left: 3px solid black;
-
-            padding: 8px;
-            margin-bottom: 8px;
-
-            h2 {
-                margin-block-start: 0;
-                margin-block-end: 0;
-                font-size: 24pt;
-                font-family: 'Merriweather', serif;
-                text-align: left;
-            }
-        }
 
         .detailCard {
         
@@ -59,7 +67,7 @@
         
             h3 {
                 font-family: 'Roboto', sans-serif;
-                font-size: 16pt;
+                font-size: 14pt;
             }
 
             p {

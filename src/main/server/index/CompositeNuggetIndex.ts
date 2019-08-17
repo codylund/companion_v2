@@ -30,7 +30,7 @@ export class CompositeNuggetIndex {
         });
 
         // Sort the date list
-        this.dateList.sort((a, b) => a.metadata.date.getMilliseconds() - b.metadata.date.getMilliseconds());
+        this.dateList = this.dateList.sort(Nugget.compareByDate);    
     }
 
     hasNugget(id: string): boolean {

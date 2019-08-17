@@ -4,6 +4,7 @@ import * as BodyParser from "body-parser";
 import { RequestHandler } from 'express';
 import { ServerConfig } from './ServerConfig';
 import { HTTPS } from 'express-sslify';
+import { isDevMode } from "@angular/core";
 
 export class MiddlewareProvider {
 
@@ -12,11 +13,21 @@ export class MiddlewareProvider {
     ) { }
 
     get(): RequestHandler[] {
-        return [
-            HTTPS({ trustProtoHeader: true }),
+        var middlewares = [];
+
+        if (!isDevMode()) {
+            // Only add the HTTPS middleware if we are in prod mode.
+            middlewares.push(HTTPS({ trustProtoHeader: true }));
+        } else {
+            console.log("Skipping prod middlewares");
+        }
+
+        middlewares.push(...[
             Express.static(this.serverConfig.static),
             Cors(),
             BodyParser.json(),
-        ];
+        ]);
+
+        return middlewares;
     }
 }
