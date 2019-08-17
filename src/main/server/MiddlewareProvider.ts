@@ -15,7 +15,7 @@ export class MiddlewareProvider {
     get(): RequestHandler[] {
         var middlewares = [];
 
-        if (!isDevMode()) {
+        if (this.serverConfig.prod) {
             // Only add the HTTPS middleware if we are in prod mode.
             middlewares.push(HTTPS({ trustProtoHeader: true }));
         } else {

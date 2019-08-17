@@ -9,8 +9,7 @@ export class NuggetProviderImpl implements NuggetProvider {
 
     constructor(
         private http: HttpClient,
-        private host: string,
-        private port?: number
+        private endpoint: string
     ) { }
 
     getNugget(id: string) {
@@ -29,18 +28,10 @@ export class NuggetProviderImpl implements NuggetProvider {
     }
 
     private getNuggetRequestUrl(id: string) {
-        return `${ this.getHost() }/api/nugget/${ id }`;
+        return `${ this.endpoint }/api/nugget/${ id }`;
     }
 
     private getLatestUrl(pageIndex: number) {
-        return `${ this.getHost() }/api/latest?page=${ pageIndex }`;
-    }
-
-    private getHost() {
-        var host = this.host; 
-        if (this.port) {
-            host += `:${ this.port }`;
-        }
-        return host;
+        return `${ this.endpoint }/api/latest?page=${ pageIndex }`;
     }
 }

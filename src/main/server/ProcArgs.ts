@@ -6,7 +6,8 @@ export class ProcArgs {
     static optionsDefinitions = [
         { name: "port", type: Number, multiple: true, defaultValue: [8080] },
         { name: "static", type: String, multiple: false },
-        { name: "content", type: String, multiple: false }
+        { name: "content", type: String, multiple: false },
+        { name: "prod", type: Boolean, defaultValue: false }
     ];
 
     static parseServerConfig(): ServerConfig {
@@ -30,6 +31,10 @@ export class ProcArgs {
             throw new Error("No content directory provided.");
         }
         serverConfig.content = options.content.valueOf();
+
+        if (options.prod) {
+            serverConfig.prod = true;
+        }
 
         return serverConfig;
     }

@@ -1,0 +1,34 @@
+{
+    "metadata": {
+        "id": "muong-hoa",
+        "title": "Mường Hoa Valley",
+        "date": "5/27/2018",
+        "activityTypes": [
+            5
+        ],
+        "location": {
+            "name": "near SaPa, Vietnam",
+            "url": "https://goo.gl/maps/2ki1yEuuPqBv4hBC7"
+        },
+        "tags": [
+            "Vietnam",
+            "Hiking",
+            "Hmong"
+        ]
+    },
+    "content": {
+        "synopsis": "Terraced rice paddies cultivated tirelessly by the staunch Hmong people.",
+        "photos" : [
+            {
+                "url": "https://live.staticflickr.com/65535/48555954327_c8fa2b2f61_b.jpg"
+            },
+            {
+                "url": "https://live.staticflickr.com/65535/48555954292_17fd856711_b.jpg"
+            },
+            {
+                "url": "https://live.staticflickr.com/65535/48555811861_e637766292_b.jpg"
+            }
+        ],
+        "body": ""
+    }
+}

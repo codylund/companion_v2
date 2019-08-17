@@ -2,18 +2,19 @@
   "name": "web",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "build": "npm run build:app:prod && npm run build:content && npm run build:server",
-    "build:app": "ng build",
+    "build": "npm run build:all:prod",
+    "build:all:dev": "npm run build:app:dev && npm run build:content && npm run build:server",
+    "build:all:prod": "npm run build:app:prod && npm run build:content && npm run build:server",
+    "build:app:dev": "ng build",
     "build:app:prod": "ng build --prod",
     "build:content": "cp -R ./src/main/content ./dist/content",
-    "build:server": "tsc -p ./tsconfig.server.local.json",
+    "build:server": "tsc -p ./tsconfig.server.json",
     "clean:content": "rm -rf ./dist/content",
-    "dev": "ng build --watch & npm run start:server:local",
     "rebuild:content": "npm run clean:content && npm run build:content",
-    "start": "npm run start:server",
-    "start:server:local": "set PORT=8080 && npm run start:server",
-    "start:server": "node ./dist/server/index.js --port $PORT --static ./dist/www --content ./dist/content/posts"
+    "start": "npm run start:server:prod",
+    "start:server": "node ./dist/server/index.js --port $PORT --static ./dist/www --content ./dist/content/posts",
+    "start:server:dev": "set PORT=8080 && npm run start:server",
+    "start:server:prod": "npm run start:server -- --prod"
   },
   "engines": {
     "node": "10.16.0"

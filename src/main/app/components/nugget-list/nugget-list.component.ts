@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Nugget } from '../../../shared/model';
-import { NuggetService } from 'src/main/app/core/service/nugget.service';
-import { NuggetQueryType } from 'src/main/app/core/service/NuggetQueryType';
+import { NuggetService } from '../../core/service/nugget.service';
+import { NuggetQueryType } from '../../core/service/NuggetQueryType';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MetadataConfig } from '../metadata/metadata.config';
 import { ActivatedRoute } from '@angular/router';
@@ -45,7 +45,7 @@ export class NuggetListComponent implements OnInit {
     // Request the next nugget page.
     this.nuggetService.getNuggetPage(NuggetQueryType.ByNew, this.nuggetPageIndex)
       .subscribe(nuggetPage => {
-        console.log(nuggetPage.toString());
+        console.log(`Idx = ${ nuggetPage.pageIndex}, # = ${ nuggetPage.nuggets.length }, pages = ${ nuggetPage.totalPages }`);
 
         nuggetPage.nuggets.forEach((nugget) => {
           this.nuggets.push(nugget);

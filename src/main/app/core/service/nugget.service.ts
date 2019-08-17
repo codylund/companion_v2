@@ -3,7 +3,7 @@ import { NuggetQueryType } from './NuggetQueryType';
 import { ActivityType, Nugget } from '../../../shared/model';
 import { NuggetProviderFactory } from '../provider/NuggetProviderFactory';
 import { NuggetProvider } from '../provider/NuggetProvider';
-import { NuggetPage } from 'src/main/shared/model/NuggetPage';
+import { NuggetPage } from '../../../shared/model/NuggetPage';
 import { Observable, Subscriber } from 'rxjs';
 
 @Injectable({
