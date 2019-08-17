@@ -13,9 +13,10 @@
 }
 
 .container {
+    margin: auto;
     display: flex;
     flex-direction: row;
-    align-items: center
+    justify-content: center;
 }
 
 .filler {
@@ -23,20 +24,11 @@
 }
 
 .page {
-    padding: 8pt;
-    font-family: 'Roboto', sans-serif;
+    padding: 8px;
 
-    &:hover {
-        cursor: pointer;
-        color: darken(white, 10%);
-    }
-}
+    margin-left: 8px;
+    margin-right: 8px;
 
-.logoContainer {
-    margin: auto;
-    width: fit-content;
-
-    font-size: 32px;
     font-family: 'Merriweather', serif;
 
     &:focus {
@@ -46,16 +38,6 @@
 
     &:hover {
         cursor: pointer;
+        color: darken(white, 10%);
     }
-
-    &:active {
-        cursor: auto;
-    }
-
-    #logo {
-        width: 180pt;
-        height: auto;
-    }
-    padding-top: 8pt;
-    padding-bottom: 8pt;
 }

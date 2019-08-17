@@ -9,6 +9,12 @@
     flex: 1;
 }
 
+.center {
+    & > * {
+        justify-content: center;
+    }
+}
+
 #metadata {
     width: fit-content;
     display: inline-block;
@@ -69,7 +75,7 @@
     
             // Add spacing between all list items.
             &:not(:last-child) {
-                margin-right: 8pt;
+                margin-right: 4pt;
             }
         }
     }

@@ -11,6 +11,7 @@ export class GalleryFsComponent implements OnInit {
   @Input() photos: Photo[];
 
   private fullscreenPhoto?: Photo;
+  private enabled = false;
 
   constructor(
     private renderer: Renderer2,
@@ -21,6 +22,9 @@ export class GalleryFsComponent implements OnInit {
   }
 
   setFullscreenPhoto(photo: Photo) {
+    if (!this.enabled) {
+      return;
+    }
     console.log("Showing fullscreen photo: " + photo.toString())
     this.fullscreenPhoto = photo;
     this.setScrollable(false);

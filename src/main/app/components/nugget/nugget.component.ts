@@ -27,6 +27,7 @@ export class NuggetComponent implements OnInit {
     this.metadataConfig.titleFontSizePt = 28;
     this.metadataConfig.locationFontSizePt = 14;
     this.metadataConfig.dateFontSizePt = 12;
+    this.metadataConfig.alignCenter = true;
   }
 
   ngOnInit() {
