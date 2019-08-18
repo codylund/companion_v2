@@ -1,10 +1,12 @@
+@import '../../app.component.scss';
+
 $metadata-background-color: transparent;
 
 $margin-nugget: 16pt;
 
 :host {
+    @include flex();
     z-index: 2;
-    display: flex;
     width: 100%;
     background: white;
 }
@@ -13,7 +15,6 @@ $margin-nugget: 16pt;
 
     margin: auto;
     margin-bottom: 16pt;
-    width: 100%;
     max-width: 700px;
 
     // Use flexbox to display rows/columns of nuggets.
