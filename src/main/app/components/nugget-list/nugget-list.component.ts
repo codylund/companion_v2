@@ -3,7 +3,6 @@ import { Nugget } from '../../../shared/model';
 import { NuggetService } from '../../core/service/nugget.service';
 import { NuggetQueryType } from '../../core/service/NuggetQueryType';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MetadataConfig } from '../metadata/metadata.config';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -19,14 +18,11 @@ export class NuggetListComponent implements OnInit {
   isLoading = true;
   isMore = false;
 
-  metadataConfig = new MetadataConfig();
-
   constructor(
     private route: ActivatedRoute,
     private nuggetService: NuggetService, 
     private domSanitizer: DomSanitizer
   ){ 
-    this.metadataConfig.showTags = false;
   }
 
   ngOnInit() {
