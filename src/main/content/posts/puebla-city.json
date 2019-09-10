@@ -1,0 +1,54 @@
+{
+    "metadata": {
+        "id": "puebla-city",
+        "title": "Puebla City",
+        "date": "8/30/2019",
+        "activityTypes": [
+        ],
+        "location": {
+            "name": "Puebla, Mexico",
+            "url": "https://goo.gl/maps/tT3m585hFSPwjYDQ9"
+        },
+        "tags": [
+            "Mexico",
+            "Street Food",
+            "Chalupas"
+        ]
+    },
+    "content": {
+        "synopsis": "A quaint escape from CDMX best suited for aimless meanderings.",
+        "photos" : [
+            {
+                "url" : "https://live.staticflickr.com/65535/48709274262_7a39b4cf55_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48708773828_e4cb18f0f4_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48708774243_3821a33a9d_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48709273787_4822e99034_k.jpg"
+            },
+            {
+                "url": "https://live.staticflickr.com/65535/48708774508_375cadb0b5_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48709275162_c8020653a1_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48709274947_2af62cc336_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48708773268_d4e8495a2e_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48709273627_f121a0478a_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48709273487_1cde8a2fa9_k.jpg"
+            }
+        ],
+        "body": ""
+    }
+}
