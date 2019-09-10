@@ -1,0 +1,30 @@
+{
+    "metadata": {
+        "id": "teotihuacan",
+        "title": "Teotihuacan",
+        "date": "8/27/2019",
+        "activityTypes": [
+        ],
+        "location": {
+            "name": "State of Mexico, Mexico",
+            "url": "https://goo.gl/maps/iX2fovdzzguVRVYJ6"
+        },
+        "tags": [
+            "Mexico",
+            "Mesoamerican",
+            "Anthropology"
+        ]
+    },
+    "content": {
+        "synopsis": "A pre-hispanic city of unknown origins. It boasts two massive temples devoted to the gods of the moon and water. Six children were sacrificed during the construction of the latter.",
+        "photos" : [
+            {
+                "url" : "https://live.staticflickr.com/65535/48690143573_8da2148aaf_b.jpg"
+            },
+            {
+                "url": "https://live.staticflickr.com/65535/48690652097_c52eda5463_b.jpg"
+            }
+        ],
+        "body": ""
+    }
+}

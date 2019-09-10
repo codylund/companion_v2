@@ -7,8 +7,5 @@
         <div>{{ nugget.content.synopsis }}</div>
     </div>
 
-    <div>
-        <app-gallery-fs [photos]="nugget.content.photos"></app-gallery-fs>
-    </div>
-
+    <app-gallery [photos]="nugget.content.photos"></app-gallery>
 </div>

@@ -1,0 +1,17 @@
+:host {
+    width: 100%;
+}
+
+// Gallery item.
+.item {
+    max-width: 960px;
+    padding: 0;
+    margin-bottom: 16px;
+
+    // Contained image.
+    .image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}

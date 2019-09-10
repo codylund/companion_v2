@@ -1,0 +1,48 @@
+{
+    "metadata": {
+        "id": "cdmx",
+        "title": "Mexico City",
+        "date": "8/25/2019",
+        "activityTypes": [
+        ],
+        "location": {
+            "name": "Ciudad de Mexico, Mexico",
+            "url": "https://goo.gl/maps/EENmAUqSfXDPRm9G9"
+        },
+        "tags": [
+            "Mexico",
+            "Street Food",
+            "Museums"
+        ]
+    },
+    "content": {
+        "synopsis": "The largest city in North America. It's sort of like New York except it doesn't suck.",
+        "photos" : [
+            {
+                "url" : "https://live.staticflickr.com/65535/48690539996_a0bddeaf1c_k.jpg"
+            },
+            {
+                "url": "https://live.staticflickr.com/65535/48690708397_d3ab14cf47_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48690539541_6ab8dc0f13_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48690707922_dc063e47b6_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48690538941_62bd5f77d7_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48690707197_b041bbbe21_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48690199463_8d2c902e5a_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48690706082_c9a1feb9fb_k.jpg"
+            }
+        ],
+        "body": ""
+    }
+}

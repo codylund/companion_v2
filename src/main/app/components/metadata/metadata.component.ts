@@ -16,7 +16,6 @@ export class MetadataComponent implements OnInit {
 
   constructor(
     private el: ElementRef,
-    private location: Location
   ) { }
 
   ngOnInit() {
@@ -32,9 +31,5 @@ export class MetadataComponent implements OnInit {
   setConfig(config: MetadataConfig) {
     this.config = config
     console.log(this.config.showActivities)
-  }
-
-  goBack() {
-    this.location.back();
   }
 }

@@ -1,36 +1,36 @@
-<div id="metadata" [class.center]="config.alignCenter" >
+<div class="container" [class.center]="config.alignCenter" >
     
     <!-- Title -->
-    <div>
-        <h1 *ngIf="metadata.title" 
-            [style.font-size]="config.titleFontSizePt + 'pt'"
-            [style.color]="config.titleFontColor">
-            <i *ngIf="config.showBack" (click) = "goBack()" class="fa fa-arrow-left"></i>
-            {{ metadata.title }}
-        </h1>
-    </div>
+    <h1 *ngIf="metadata.title"
+        class="text"
+        [style.font-size]="config.titleFontSizePt + 'pt'"
+        [style.color]="config.titleFontColor">
+        {{ metadata.title }}
+    </h1>
 
     <!-- Location -->
-    <h2 *ngIf="config.showLocation" 
+    <h2 *ngIf="config.showLocation"
+        class="text"
         [style.font-size]="config.locationFontSizePt + 'pt'"
         [style.color]="config.subtitleFontColor">    
         <i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ metadata.location.url }}">{{ metadata.location.name }}</a>
     </h2>
     
     <!-- Date -->
-    <h2 *ngIf="config.showDate" 
+    <h2 *ngIf="config.showDate"
+        class="text"
         [style.font-size]="config.dateFontSizePt + 'pt'"
         [style.color]="config.subtitleFontColor">
         <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;{{ metadata.date.toLocaleDateString("en-us", { year: 'numeric', month: 'long', day: 'numeric' }) }}
     </h2>            
 
     <!-- Display the tags -->
-    <ul *ngIf="config.showTags" id="tags">
+    <div *ngIf="config.showTags" class="tags">
         <!-- TODO: search for nuggets by tag onclick -->
-        <li *ngFor="let tag of metadata.tags">
+        <div *ngFor="let tag of metadata.tags">
             <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ tag }}
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>
 
 <!-- Fill out all the extra space in the flexbox. -->

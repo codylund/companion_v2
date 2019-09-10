@@ -10,9 +10,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { MetadataComponent } from './components/metadata/metadata.component';
 import { NuggetListComponent } from './components/nugget-list/nugget-list.component';
 import { NuggetProviderFactory } from './core/provider/NuggetProviderFactory';
-import { GalleryFsComponent } from './components/gallery-fs/gallery-fs.component';
-import { GlobeComponent } from './components/globe/globe.component';
-import { GlobeService } from './core/service/globe/globe.service';
+import { GalleryComponent } from './components/gallery/gallery.component';
 import { WhoComponent } from './components/who/who.component';
 
 @NgModule({
@@ -22,8 +20,7 @@ import { WhoComponent } from './components/who/who.component';
     NavComponent,
     MetadataComponent,
     NuggetListComponent,
-    GalleryFsComponent,
-    GlobeComponent,
+    GalleryComponent,
     WhoComponent
   ],
   imports: [
@@ -32,7 +29,6 @@ import { WhoComponent } from './components/who/who.component';
     HttpClientModule
   ],
   providers: [
-    GlobeService,
     NuggetService,
     NuggetProviderFactory
   ],

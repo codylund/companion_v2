@@ -1,17 +1,35 @@
 <div class="nuggetList">
-    <div *ngFor="let n of nuggets">
-            <div class="nugget">
-                <div class="thumbnail" [routerLink]="['/nugget/', n.metadata.id]" [style.background-image]="getSanitizedUrl(n.content.photos[0].url)">
-                    <h1>{{ n.metadata.title }}</h1>
-                </div>
+
+    <div class="spotlight">
+        <div class="thumbnail"
+            [style.background-image]="getSanitizedUrl(nuggets[0].content.photos[0].url)">
+            <div class="text">
+                <h1 [routerLink]="['/nugget/', nuggets[0].metadata.id]">{{ nuggets[0].metadata.title }}</h1>
+                <p>{{ nuggets[0].content.synopsis }}</p>
             </div>
+        </div>
     </div>
-    <!-- Add some extra divs as spacers. These will prevent items in the last row from increasing in size
-        if there are fewer than needed. -->
+
+    <div class="intro">
+        <img src="assets/mindfuck.svg" />
+        
+        <h1>
+            Rebuilding my world view 
+            <br>
+            through first-hand experiences.
+        </h1>
+        
+    </div>
+
+    <div *ngFor="let n of nuggets; let i = index">
+        <div *ngIf="i > 0" class="nugget">
+            <div class="thumbnail" [routerLink]="['/nugget/', n.metadata.id]"
+                [style.background-image]="getSanitizedUrl(n.content.photos[0].url)">
+                <h1>{{ n.metadata.title }}</h1>
+            </div>
+        </div>
+    </div>
     <div class="moreButton" *ngIf="isMore" (click)="loadNextPage()">
         <div class="moreButtonText">See More</div>
-    </div>    
-    <div class="filler"></div>
-    <div class="filler"></div>
-    <div class="filler"></div>
+    </div>
 </div>
