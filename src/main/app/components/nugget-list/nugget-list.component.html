@@ -1,11 +1,11 @@
-<div class="nuggetList">
+<div *ngIf="highlight" class="nuggetList">
 
     <div class="spotlight">
         <div class="thumbnail"
-            [style.background-image]="getSanitizedUrl(nuggets[0].content.photos[0].url)">
+            [style.background-image]="getSanitizedUrl(highlight.content.photos[0].url)">
             <div class="text">
-                <h1 [routerLink]="['/nugget/', nuggets[0].metadata.id]">{{ nuggets[0].metadata.title }}</h1>
-                <p>{{ nuggets[0].content.synopsis }}</p>
+                <h1 [routerLink]="['/places/', highlight.metadata.id]">{{ highlight.metadata.title }}</h1>
+                <p>{{ highlight.content.synopsis }}</p>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
 
     <div *ngFor="let n of nuggets; let i = index">
         <div *ngIf="i > 0" class="nugget">
-            <div class="thumbnail" [routerLink]="['/nugget/', n.metadata.id]"
+            <div class="thumbnail" [routerLink]="['/places/', n.metadata.id]"
                 [style.background-image]="getSanitizedUrl(n.content.photos[0].url)">
                 <h1>{{ n.metadata.title }}</h1>
             </div>

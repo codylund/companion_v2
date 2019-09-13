@@ -1,7 +1,7 @@
 <!-- Use a conditional container because the nugget is loaded asynchronously. -->
 <div *ngIf="nugget" class="container">
 
-    <app-metadata [metadata]="nugget.metadata" [config]="metadataConfig"></app-metadata>
+    <app-metadata [metadata]="nugget.metadata"></app-metadata>
 
     <div class="synopsis">
         <div>{{ nugget.content.synopsis }}</div>

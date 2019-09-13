@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NuggetService } from '../../core/service/nugget.service';
 import { Nugget } from '../../../shared/model';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MetadataConfig } from '../metadata/metadata.config';
+import { PageMetadataService } from '../../core/service/page-metadata.service';
+import { PageMetadatas } from '../../core/site/PageMetadatas';
 
 @Component({
   selector: 'app-nugget',
@@ -17,32 +18,26 @@ export class NuggetComponent implements OnInit {
    */
   nugget?: Nugget;
 
-  metadataConfig =  new MetadataConfig();
-
   constructor(
     private route: ActivatedRoute,
     private nuggetService: NuggetService,
-    private domSanitizer: DomSanitizer
-  ) { 
-    this.metadataConfig.titleFontSizePt = 28;
-    this.metadataConfig.locationFontSizePt = 14;
-    this.metadataConfig.dateFontSizePt = 12;
-    this.metadataConfig.alignCenter = true;
-  }
+    private domSanitizer: DomSanitizer,
+    private pageMetadataService: PageMetadataService
+  ) { }
 
   ngOnInit() {
+    // Set the initial title.
+    this.pageMetadataService.post(PageMetadatas.default);
+
+    // Get the route parameters.
     this.route.paramMap.subscribe((paramMap) => {
       // Get the requested nugget id from the parameter map.
       var id = paramMap.get('id');
-      if (!id) {
-        console.error("No ID was specified. This should never happen.");
-        id = '0';
-      }
 
       // Request the nugget from the server.
       this.nuggetService.getNugget(id).subscribe(nugget => {
-        console.log(`Received nugget: ${ JSON.stringify(nugget) }`)
         this.nugget = nugget;
+        this.pageMetadataService.post(PageMetadatas.forPlace(this.nugget.metadata));
       });
     });
   }

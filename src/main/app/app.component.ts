@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { Page } from './core/interface/Page'
+import { PageMetadataService } from './core/service/page-metadata.service';
+import { NuggetMetadata } from '../shared/model';
 
 declare let ga: Function;
 
@@ -9,14 +13,24 @@ declare let ga: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'web';
-
-  constructor(public router: Router) {
-    this.router.events.subscribe(event => {
+  constructor(
+    router: Router,
+    metadataService: PageMetadataService,
+    title: Title
+  ) {
+    metadataService.subscribe(pageMetadata => {
+      title.setTitle(pageMetadata.title);
+    })
+    
+    router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        ga('set', 'page', event.urlAfterRedirects);
-        ga('send', 'pageview');
+        this.logNavigationToTelemetry(event);
       }
     });
+  }
+
+  private logNavigationToTelemetry(event: NavigationEnd) {
+    ga('set', 'page', event.urlAfterRedirects);
+    ga('send', 'pageview');
   }
 }

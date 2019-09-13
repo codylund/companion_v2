@@ -3,7 +3,8 @@ import { Nugget } from '../../../shared/model';
 import { NuggetService } from '../../core/service/nugget.service';
 import { NuggetQueryType } from '../../core/service/NuggetQueryType';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { PageMetadataService } from '../../core/service/page-metadata.service';
+import { PageMetadatas } from '../../core/site/PageMetadatas';
 
 @Component({
   selector: 'app-nugget-list',
@@ -13,25 +14,33 @@ import { ActivatedRoute } from '@angular/router';
 export class NuggetListComponent implements OnInit {
 
   private nuggetPageIndex = 0;
+
+  /**
+   * The featured place.
+   */
+  highlight: Nugget;
+
+  /**
+   * The other places.
+   */
   nuggets: Nugget[] = [];
 
   isLoading = true;
   isMore = false;
 
   constructor(
-    private route: ActivatedRoute,
     private nuggetService: NuggetService, 
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private pageMetadataService: PageMetadataService
   ){ 
   }
 
   ngOnInit() {
     this.loadNextPage();
+    this.pageMetadataService.post(PageMetadatas.places)
   }
   
   loadNextPage() {
-    console.log(`Loading page ${ this.nuggetPageIndex }`);
-
     // We are loading a page of nuggets.
     this.isLoading = true;
 
@@ -41,10 +50,13 @@ export class NuggetListComponent implements OnInit {
     // Request the next nugget page.
     this.nuggetService.getNuggetPage(NuggetQueryType.ByNew, this.nuggetPageIndex)
       .subscribe(nuggetPage => {
-        console.log(`Idx = ${ nuggetPage.pageIndex}, # = ${ nuggetPage.nuggets.length }, pages = ${ nuggetPage.totalPages }`);
-
-        nuggetPage.nuggets.forEach((nugget) => {
-          this.nuggets.push(nugget);
+        // Init vars with the appropriate nuggets.
+        nuggetPage.nuggets.forEach((nugget, idx) => {
+          if (idx == 0) {
+            this.highlight = nugget
+          } else {
+            this.nuggets.push(nugget);
+          }
         });
 
         // We aren't loading more nuggets at the moment.
@@ -59,6 +71,6 @@ export class NuggetListComponent implements OnInit {
   }
 
   getSanitizedUrl(url: string) {
-    return this.domSanitizer.bypassSecurityTrustStyle('url(' + url + ')');
+    return this.domSanitizer.bypassSecurityTrustStyle(`url('${url}')`);
   }
 }

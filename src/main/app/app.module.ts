@@ -12,6 +12,7 @@ import { NuggetListComponent } from './components/nugget-list/nugget-list.compon
 import { NuggetProviderFactory } from './core/provider/NuggetProviderFactory';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { WhoComponent } from './components/who/who.component';
+import { PageMetadataService } from './core/service/page-metadata.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { WhoComponent } from './components/who/who.component';
     MetadataComponent,
     NuggetListComponent,
     GalleryComponent,
-    WhoComponent
+    WhoComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -30,7 +31,8 @@ import { WhoComponent } from './components/who/who.component';
   ],
   providers: [
     NuggetService,
-    NuggetProviderFactory
+    NuggetProviderFactory,
+    PageMetadataService
   ],
   bootstrap: [AppComponent]
 })

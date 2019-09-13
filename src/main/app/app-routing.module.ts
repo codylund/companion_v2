@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '', component: NuggetListComponent
   },
   {
-    path: 'nugget/:id', component: NuggetComponent 
+    path: 'places/:id', component: NuggetComponent 
   },
   {
     path: 'who', component: WhoComponent

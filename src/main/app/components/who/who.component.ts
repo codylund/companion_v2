@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PageMetadataService } from '../../core/service/page-metadata.service';
+import { PageMetadatas } from '../../core/site/PageMetadatas';
 
 @Component({
   selector: 'app-who',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private pageMetadataService: PageMetadataService
+  ) { }
 
   ngOnInit() {
+    this.pageMetadataService.post(PageMetadatas.who);
   }
-
 }
