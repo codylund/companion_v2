@@ -3,10 +3,9 @@
         "id": "puebla-city",
         "title": "Puebla City",
         "date": "8/30/2019",
-        "activityTypes": [
-        ],
         "location": {
-            "name": "Puebla, Mexico",
+            "state": "Puebla",
+            "country": "Mexico",
             "url": "https://goo.gl/maps/tT3m585hFSPwjYDQ9"
         },
         "tags": [

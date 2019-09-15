@@ -10,12 +10,81 @@ $margin-nugget: 16px;
     width: 100%;
 }
 
+// Spotlighted item.
+.spotlight {
+    width: 100%;
+    height: 90vh;
+
+    .thumbnail {
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+
+        display: flex;
+        justify-content: left;
+        align-items: left; 
+        flex-direction: column;
+        background-color: black;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .text {
+            background-color: #000000aa;
+            margin-top: auto;
+
+            & > * {
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+
+            h1 {
+                text-align: left;
+                margin-left: 32px;
+                margin-right: 32px;
+
+                padding-top: 32px;
+                padding-bottom: 8px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-shadow: 0 1px 5px black;
+                color: #ffffff;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-style: italic;
+                border-bottom: solid 1px white;
+            }
+
+            h2 {
+                text-align: left;
+                
+                padding-left: 32px;
+                padding-right: 32px;
+                padding-bottom: 8px;
+                padding-top: 8px;
+
+                font-family: 'Merriweather', serif;
+                text-shadow: 0 1px 5px black;
+                color: white;
+            }
+
+            p {
+                max-width: 500px;
+
+                padding-left: 32px;
+                padding-bottom: 32px;
+                padding-right: 32px;
+
+                color: #cccccc;
+            }
+
+        }
+    } 
+}
+
 .intro {
     margin: auto;
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-top: 32px;
-    padding-bottom: 16px;
+    padding: 32px 16px 16px 16px;
 
     text-align: center;
     max-width: 400px;
@@ -45,37 +114,29 @@ $margin-nugget: 16px;
     flex-wrap: wrap;
     align-items: stretch;
 
-    // Apply top and left margin to container
-    // so we don't double-up margins between
-    // the nugget items.
-
-    // Make the nuggets fill the space.
-    & > * {
-        flex-grow: 1;
-
-        // Container applies left and top margins
-        margin-bottom: 16px;
-    }
-
     .nugget {
-
-        height: 100%;
-        max-width: 700px;
-        margin: auto;
-
         // Flexbox for consistent sizing.
         display: flex;
         flex-direction: column;
         align-items: stretch;
 
+        // Make the nuggets fill the space.
+        flex-grow: 1;
+
+        height: 100%;
+        max-width: 700px;
+        margin: 0 auto 16px auto;
+
         .thumbnail {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+
+            position: relative;
 
             height: 300px;
             background-size: cover;
 
-            display: flex;
-            justify-content: center;
-            align-items: center; 
 
             h1 {
                 text-align: center;
@@ -85,70 +146,22 @@ $margin-nugget: 16px;
                 color: white;
             }
 
+            .metadata {
+                background-color: #000000aa;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 8px;
+                margin: 8px;
+                color: #cccccc;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+            }
+
             &:hover {
                 cursor: pointer;
             }
-        } 
-    }
-
-    .spotlight {
-        width: 100%;
-        height: 90vh;
-
-        .thumbnail {
-
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            justify-content: left;
-            align-items: left; 
-            flex-direction: column;
-            background-color: black;
-
-            .text {
-                background-color: #000000aa;
-                margin-top: auto;
-
-                & > * {
-                    margin-block-start: 0;
-                    margin-block-end: 0;
-                }
-
-                h1 {
-                    text-align: left;
-                    
-                    padding-left: 32px;
-                    padding-top: 32px;
-                    padding-right: 32px;
-                    padding-bottom: 8px;
-
-                    font-family: 'Merriweather', serif;
-                    text-shadow: 0 1px 5px black;
-                    color: white;
-
-                    &:hover {
-                        cursor: pointer;
-                    }
-
-                    &:active {
-                        outline: none;
-                    }
-                }
-
-                p {
-                    max-width: 500px;
-
-                    padding-left: 32px;
-                    padding-bottom: 32px;
-                    padding-right: 32px;
-
-                    color: #cccccc;
-                }
-
-            }
-        } 
+        }
     }
 
     .moreButton {

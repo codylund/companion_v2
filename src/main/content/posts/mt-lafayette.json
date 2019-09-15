@@ -6,7 +6,9 @@
         "activityTypes": [
         ],
         "location": {
-            "name": "Franconia, NH, USA",
+            "city": "Franconia", 
+            "state": "NH", 
+            "country": "USA",
             "url": "https://goo.gl/maps/h23Xw5M8xx5MmG3g7"
         },
         "tags": [

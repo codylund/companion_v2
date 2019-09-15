@@ -1,4 +1,3 @@
-import { ActivityType } from './ActivityType';
 import { Location } from './Location';
 
 export class NuggetMetadata {
@@ -7,7 +6,6 @@ export class NuggetMetadata {
     date: Date;
     location: Location;
     tags: string[];
-    activityTypes: ActivityType[];
 
     constructor(json: any) {
         this.id = json.id;
@@ -15,6 +13,5 @@ export class NuggetMetadata {
         this.date = new Date(json.date);
         this.location = new Location(json.location);
         this.tags = json.tags;
-        this.activityTypes = json.activityTypes
     }
 }

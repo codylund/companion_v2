@@ -7,7 +7,9 @@
             5
         ],
         "location": {
-            "name": "Phong Nha-Ke Bang National Park, Vietnam",
+            "city": "Phong Nha",
+            "state": "Quang Binh",
+            "country": "Vietnam",
             "url": "https://goo.gl/maps/xzWjYggQpqgtKGiV7"
         },
         "tags": [

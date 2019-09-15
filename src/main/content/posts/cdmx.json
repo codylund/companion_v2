@@ -6,7 +6,8 @@
         "activityTypes": [
         ],
         "location": {
-            "name": "Ciudad de Mexico, Mexico",
+            "state": "Ciudad de Mexico",
+            "country": "Mexico",
             "url": "https://goo.gl/maps/EENmAUqSfXDPRm9G9"
         },
         "tags": [

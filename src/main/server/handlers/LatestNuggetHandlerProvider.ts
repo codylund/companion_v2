@@ -15,11 +15,13 @@ export class LatestNuggetHandlerProvider implements HandlerProvider {
     }
     
     getHandler(): RequestHandler {
-        return (req, res, next) => {
+        return (req, res) => {
             var pageIndex = QueryUtils.parsePageIndex(req.query);
             console.log(`Request for latest nuggets page ${ pageIndex }`);    
 
-            var latestNuggets = this.index.latestNuggets()
+            var countries = req.body["countries"] as string[];
+
+            var latestNuggets = this.index.queryNuggets(countries);
             
             res.json(PageUtils.getPage(latestNuggets, pageIndex));
         };

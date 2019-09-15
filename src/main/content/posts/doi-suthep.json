@@ -6,7 +6,8 @@
         "activityTypes": [
         ],
         "location": {
-            "name": "near Chiang Mai, Thailand",
+            "city": "Chiang Mai",
+            "country": "Thailand",
             "url": "https://goo.gl/maps/xWJv6ucAdTgMRhQ27"
         },
         "tags": [

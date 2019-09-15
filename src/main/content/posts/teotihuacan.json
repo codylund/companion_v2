@@ -6,7 +6,8 @@
         "activityTypes": [
         ],
         "location": {
-            "name": "State of Mexico, Mexico",
+            "state": "State of Mexico",
+            "country": "Mexico",
             "url": "https://goo.gl/maps/iX2fovdzzguVRVYJ6"
         },
         "tags": [

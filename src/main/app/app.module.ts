@@ -1,4 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+import { MatSelectModule } from '@angular/material/select'
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -13,6 +17,7 @@ import { NuggetProviderFactory } from './core/provider/NuggetProviderFactory';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { WhoComponent } from './components/who/who.component';
 import { PageMetadataService } from './core/service/page-metadata.service';
+import { PlaceListControllerComponent } from './components/place-list-controller/place-list-controller.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +28,16 @@ import { PageMetadataService } from './core/service/page-metadata.service';
     NuggetListComponent,
     GalleryComponent,
     WhoComponent,
+    PlaceListControllerComponent,
   ],
   imports: [
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [
     NuggetService,

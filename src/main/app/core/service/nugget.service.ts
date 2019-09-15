@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { NuggetQueryType } from './NuggetQueryType';
-import { ActivityType, Nugget } from '../../../shared/model';
+import { Nugget } from '../../../shared/model';
 import { NuggetProviderFactory } from '../provider/NuggetProviderFactory';
 import { NuggetProvider } from '../provider/NuggetProvider';
-import { NuggetPage } from '../../../shared/model/NuggetPage';
-import { Observable, Subscriber } from 'rxjs';
+import { Observable } from 'rxjs';
+import { LoadedNuggets } from '../site/LoadedNuggets';
+import { count } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,45 +13,80 @@ export class NuggetService {
 
   private nuggetProvider: NuggetProvider;
 
+  private nuggets: Nugget[] = []
+
+  private countries: string[] = [];
+
+  private nuggetsSubscribers: ((nuggets: LoadedNuggets) => any)[] = [] 
+
+  /**
+   * Observable for watching nuggets to display.
+   */
+  private nuggetsObservable = new Observable<LoadedNuggets>((observer)=>{
+    // Handler passing the observer more nuggets.
+    const handler = (nuggets: LoadedNuggets) => observer.next(nuggets);
+    
+    // Track the handler.
+    this.nuggetsSubscribers.push(handler);
+
+    // Return function to unsubscribe.
+    return () => {
+      var index = this.nuggetsSubscribers.indexOf(handler)
+      this.nuggetsSubscribers = this.nuggetsSubscribers.splice(index, 1);
+    }
+  });
+
+  /**
+   * The next page to load.
+   */
+  private nextPage = 0;
+
   constructor(nuggetProviderFactory: NuggetProviderFactory) {
     this.nuggetProvider = nuggetProviderFactory.getInstance();
   }
 
-  getLatestNugget() {
-    return this.getNuggets(NuggetQueryType.ByNew, 0, 1)[0];
+  observeCurrentNuggets(): Observable<LoadedNuggets> {
+    return this.nuggetsObservable;
   }
 
-  getNuggetPage(queryType: NuggetQueryType, pageIndex: number): Observable<NuggetPage> {
-    switch(queryType) {
-      case NuggetQueryType.ByNew:
-      default:
-        return this.nuggetProvider.getLatest(pageIndex);
-    }
-  }
+  /**
+   * Asynchronously load more nuggets.
+   */
+  loadMore() {
+    this.nuggetProvider.getLatest(this.nextPage++, {
+      countries: this.countries
+    }).subscribe(page => {
+      this.nuggets.push(...page.nuggets);
 
-  searchNuggets(query: string, tags?: string[], activityTypes?: ActivityType[]) {
-
-  }
-
-  getNuggets(queryType: NuggetQueryType, startIndex: Number, count: Number, attributes?: Map<string, Object>) {
-    switch(queryType) {
-      case NuggetQueryType.ByNew:
-        break;
-      case NuggetQueryType.ByTop:
-        break;
-      default:
-        break;
-    }
-    return [this.getNugget('0')];
+      // Alert subscribers of the new nuggets.
+      this.nuggetsSubscribers.forEach(subscriber => {
+        subscriber({
+          nuggets: this.nuggets,
+          isMore: page.pageIndex + 1 < page.totalPages
+        });
+      })
+    });
   }
 
   getNugget(id: string) {
     return this.nuggetProvider.getNugget(id);
   }
 
-  search(term: string) {
-
+  getCountries() {
+    return this.countries;
   }
 
-  
+  setCountries(countries: string[]) {
+    console.log(countries);
+    if (!countries)
+      countries = [];
+    this.countries = countries;
+    this.reset();
+  }
+
+  private reset() {
+    this.nuggets = [];
+    this.nextPage = 0;
+    this.loadMore();
+  }
 }

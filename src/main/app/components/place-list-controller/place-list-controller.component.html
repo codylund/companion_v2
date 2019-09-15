@@ -1,0 +1,11 @@
+<div class="button">
+    <mat-form-field>
+        <mat-label>Country</mat-label>
+        <mat-select [(value)]="selectedCountries" (selectionChange)="updateCountries()">
+            <mat-option [value]="[]">All</mat-option>
+            <mat-option *ngFor="let country of countries" [value]="country">
+                {{country}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

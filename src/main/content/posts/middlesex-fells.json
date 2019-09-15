@@ -7,7 +7,9 @@
             2
         ],
         "location": {
-            "name": "Middlesex Fells, Medford, MA, USA",
+            "city": "Medford",
+            "state": "MA",
+            "country": "USA",
             "url": "https://goo.gl/maps/WdoQ7Ch7h16KAch66"
         },
         "tags": [

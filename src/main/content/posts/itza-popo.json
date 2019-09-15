@@ -1,0 +1,35 @@
+{
+    "metadata": {
+        "id": "itza-popo",
+        "title": "Izta-Popo Zoquiapan National Park",
+        "date": "8/26/2019",
+        "activityTypes": [
+        ],
+        "location": {
+            "city": "Amecameca",
+            "state": "Puebla",
+            "country": "Mexico",
+            "url": "https://goo.gl/maps/UGmDTxLVBEepEqBP6"
+        },
+        "tags": [
+            "Volcano",
+            "Mexico",
+            "National Park"
+        ]
+    },
+    "content": {
+        "synopsis": "Home of Iztaccíhuatl and Popocatépetl- a dormant and active volcano, respectively- two of Mexico's three highest peaks. Reached via Paso de Cortez. The park entrance is situated at ~3,400m (~11,000ft)",
+        "photos" : [
+            {
+                "url" : "https://live.staticflickr.com/65535/48731627918_228a75b9e1_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48732136032_e469155dc1_k.jpg"
+            },
+            {
+                "url" : "https://live.staticflickr.com/65535/48731953046_b0d2264ffc_k.jpg"
+            }
+        ],
+        "body": ""
+    }
+}

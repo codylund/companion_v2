@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { Page } from './core/interface/Page'
 import { PageMetadataService } from './core/service/page-metadata.service';
-import { NuggetMetadata } from '../shared/model';
 
 declare let ga: Function;
 

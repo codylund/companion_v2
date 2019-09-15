@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Nugget } from '../../../shared/model';
 import { NuggetService } from '../../core/service/nugget.service';
-import { NuggetQueryType } from '../../core/service/NuggetQueryType';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PageMetadataService } from '../../core/service/page-metadata.service';
 import { PageMetadatas } from '../../core/site/PageMetadatas';
@@ -36,38 +35,28 @@ export class NuggetListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadNextPage();
     this.pageMetadataService.post(PageMetadatas.places)
+
+    this.nuggetService.getNugget('teotihuacan').subscribe(nugget => this.highlight = nugget)
+
+    // Observe the currently loaded nuggets.
+    this.nuggetService.observeCurrentNuggets().subscribe((loadedNuggets) => {
+      this.nuggets = loadedNuggets.nuggets;
+      this.isMore = loadedNuggets.isMore;
+      this.isLoading = false;
+    });
+
+    // Load the first page.
+    this.loadNextPage();
   }
   
   loadNextPage() {
     // We are loading a page of nuggets.
     this.isLoading = true;
-
     // We don't know if there are more pages yet.
     this.isMore = false;
 
-    // Request the next nugget page.
-    this.nuggetService.getNuggetPage(NuggetQueryType.ByNew, this.nuggetPageIndex)
-      .subscribe(nuggetPage => {
-        // Init vars with the appropriate nuggets.
-        nuggetPage.nuggets.forEach((nugget, idx) => {
-          if (idx == 0) {
-            this.highlight = nugget
-          } else {
-            this.nuggets.push(nugget);
-          }
-        });
-
-        // We aren't loading more nuggets at the moment.
-        this.isLoading = false;
-
-        // Check if there are yet more nuggets to load.
-        this.isMore = nuggetPage.pageIndex < nuggetPage.totalPages - 1;
-
-        // Next time, load the next nugget.
-        this.nuggetPageIndex = nuggetPage.pageIndex + 1;
-      });
+    this.nuggetService.loadMore()
   }
 
   getSanitizedUrl(url: string) {

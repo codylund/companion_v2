@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { ActivityType, Nugget } from '../../../shared/model';
+import { Nugget } from '../../../shared/model';
 import { map } from 'rxjs/operators'
 import { NuggetProvider } from './NuggetProvider';
 import { Observable } from 'rxjs';
 import { NuggetPage } from '../../../shared/model/NuggetPage';
+import { NuggetFilters } from '../site/NuggetFilters';
 
 export class NuggetProviderImpl implements NuggetProvider {
 
@@ -18,13 +19,12 @@ export class NuggetProviderImpl implements NuggetProvider {
             .pipe(map(res => new Nugget(res)));
     }
 
-    getLatest(pageIndex: number): Observable<NuggetPage>  {
+    getLatest(pageIndex: number, filters: NuggetFilters): Observable<NuggetPage>  {
         var url = this.getLatestUrl(pageIndex);
-        return this.http.get(url).pipe(map(res => new NuggetPage(res)));
-    }
 
-    queryNuggets(query?: string, tags?: string[], activityTypes?: ActivityType[]) {
-
+        return this.http.post(url, {
+            countries: filters.countries
+        }).pipe(map(res => new NuggetPage(res)));
     }
 
     private getNuggetRequestUrl(id: string) {

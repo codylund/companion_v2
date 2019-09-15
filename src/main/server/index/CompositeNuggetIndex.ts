@@ -2,19 +2,13 @@ import { Nugget } from '../../shared/model'
 import { NuggetIndex } from './NuggetIndex';
 import { ArrayUtils } from '../utils/ArrayUtils'
 import { IgnoreCaseIndexOption } from './IgnoreCaseIndexOption';
-import { NoPuncIndexOption } from './NoPuncIndexOption';
 
 export class CompositeNuggetIndex {
 
     private idIndex = new NuggetIndex<string>(new IgnoreCaseIndexOption());
+    private countryIndex = new NuggetIndex<string>(new IgnoreCaseIndexOption());
     private dateList = new Array<Nugget>();
-    private tagIndex = new NuggetIndex<string>(
-        // Ignore case.
-        new IgnoreCaseIndexOption(),
-        // Ignore punctuation.
-        new NoPuncIndexOption()
-    );
-    
+
     constructor(nuggets: Nugget[]) {
         nuggets.forEach((nugget) => {
             var metadata = nugget.metadata;
@@ -22,15 +16,15 @@ export class CompositeNuggetIndex {
             // Populate the by-id index.
             this.idIndex.put(metadata.id, nugget);
             
+            // Populate the by-country index.
+            this.countryIndex.put(metadata.location.country, nugget);
+
             // Populate the by-date index.
             this.dateList.push(nugget);
-
-            // Populate the by-tag index.
-            metadata.tags.forEach((tag) => this.tagIndex.put(tag.toLowerCase(), nugget));
         });
 
         // Sort the date list
-        this.dateList.sort(Nugget.compareByDate);    
+        this.dateList.sort(Nugget.compareByDate);
     }
 
     hasNugget(id: string): boolean {
@@ -45,13 +39,15 @@ export class CompositeNuggetIndex {
         return this.dateList;
     }
 
-    queryNuggets(query: string, tags: string[]): Nugget[] {
+    queryNuggets(countries: string[]): Nugget[] {
         var lists = new Array<Nugget[]>();
-        
-        if (tags && tags.length > 0) {
-            // Get all the nuggets with the provided tags.
-            lists.push(this.tagIndex.get(...tags));
-        }
+
+        lists.push(
+            this.latestNuggets()
+                .filter(nugget => countries.length <= 0 
+                    || countries.indexOf(nugget.metadata.location.country) >= 0
+                )
+        );
         
         if (lists.length <= 0) {
             // We can't reduce an empty array!

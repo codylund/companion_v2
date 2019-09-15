@@ -12,17 +12,19 @@ export class NuggetIndex<T> {
     }
 
     put(key: T, item: Nugget) {
-        this.initKey(key);
+        key = this.initKey(key);
         this.nuggets.get(key).push(item);
     }
 
-    private initKey(key: T) {
+    private initKey(key: T): T {
         key = this.applyOptions(key);
 
         if (this.nuggets.has(key))
-            return;
+            return key;
         
         this.nuggets.set(key, []);
+
+        return key;
     }
 
     private applyOptions(key: T): T {
@@ -30,6 +32,10 @@ export class NuggetIndex<T> {
             key = option.apply(key);
         })
         return key;
+    }
+
+    keys(): T[] {
+        return Array.from(this.nuggets.keys());
     }
 
     get(...keys: T[]) {

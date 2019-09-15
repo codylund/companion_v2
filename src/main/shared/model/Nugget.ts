@@ -14,4 +14,8 @@ export class Nugget {
         return new Date(b.metadata.date).getTime()
             - new Date(a.metadata.date).getTime();
     }
+
+    static compareByTitle(a: Nugget, b: Nugget): number {
+        return a.metadata.title.localeCompare(b.metadata.title, 'en', {sensitivity: 'base'});
+    }
 }

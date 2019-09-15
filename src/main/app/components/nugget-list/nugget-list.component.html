@@ -1,31 +1,37 @@
-<div *ngIf="highlight" class="nuggetList">
-
-    <div class="spotlight">
-        <div class="thumbnail"
-            [style.background-image]="getSanitizedUrl(highlight.content.photos[0].url)">
-            <div class="text">
-                <h1 [routerLink]="['/places/', highlight.metadata.id]">{{ highlight.metadata.title }}</h1>
-                <p>{{ highlight.content.synopsis }}</p>
-            </div>
+<div *ngIf="highlight" class="spotlight">
+    <div class="thumbnail"
+        [style.background-image]="getSanitizedUrl(highlight.content.photos[0].url)"
+        [routerLink]="['/places/', highlight.metadata.id]">
+        <div class="text">
+            <h1>Highlight</h1>
+            <h2>{{ highlight.metadata.title }}</h2>
+            <p>{{ highlight.content.synopsis }}</p>
         </div>
     </div>
+</div>
 
-    <div class="intro">
-        <img src="assets/mindfuck.svg" />
-        
-        <h1>
-            Rebuilding my world view 
-            <br>
-            through first-hand experiences.
-        </h1>
-        
-    </div>
+<div class="intro">
+    <img src="assets/mindfuck.svg" />
+    
+    <h1>
+        Rebuilding my world view 
+        <br>
+        through first-hand experiences.
+    </h1>
+    
+</div>
 
-    <div *ngFor="let n of nuggets; let i = index">
-        <div *ngIf="i > 0" class="nugget">
+<app-place-list-controller></app-place-list-controller>
+
+<div class="nuggetList">
+    <div *ngFor="let n of nuggets">
+        <div class="nugget">
             <div class="thumbnail" [routerLink]="['/places/', n.metadata.id]"
                 [style.background-image]="getSanitizedUrl(n.content.photos[0].url)">
                 <h1>{{ n.metadata.title }}</h1>
+                <div class="metadata">
+                    <span>{{ n.metadata.location.toString() }}</span>
+                </div>
             </div>
         </div>
     </div>

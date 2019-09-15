@@ -23,7 +23,7 @@ export class PageMetadatas {
      * Page title for main list of places.
      */
     static places: PageMetadata = {
-        title: "Oh, the places I've been!"
+        title: "Cody Lund | Oh, the places I've been!"
     };
     
     /**
@@ -36,7 +36,7 @@ export class PageMetadatas {
      */
     static forPlace(nuggetMetadata: NuggetMetadata): PageMetadata {
         return {
-            title: `Visit ${nuggetMetadata.title} in ${nuggetMetadata.location.name}`
+            title: `Visit ${nuggetMetadata.title} in ${nuggetMetadata.location.toString()}`
         };
     }
 }
