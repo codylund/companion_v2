@@ -1,0 +1,32 @@
+{
+    "content": {
+      "photos": [
+        {
+          "url": "https://live.staticflickr.com/65535/48761928661_c20c6f7b8b_o_d.jpg"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/48761610258_dd94a8f805_o_d.jpg"
+        },
+        {
+          "url": "https://live.staticflickr.com/65535/48761610198_e056a2c45b_o_d.jpg"
+        }
+      ],
+      "synopsis": "A treacherous ridgeline trail peppered with memorials to fallen hikers.",
+      "body": ""
+    },
+    "metadata": {
+      "id": "puu-manamana",
+      "title": "Pu'u Manamana Turnover Trail",
+      "date": "2018-07-10T04:00:00.000Z",
+      "location": {
+        "city": "Hauula",
+        "state": "HI",
+        "country": "USA"
+      },
+      "tags": [
+        "Clamber",
+        "Hike",
+        "Hawaii"
+      ]
+    }
+  }

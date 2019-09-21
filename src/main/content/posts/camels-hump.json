@@ -1,0 +1,31 @@
+{
+  "content": {
+    "photos": [{
+        "url": "https://live.staticflickr.com/65535/48762096792_dbcf5acc74_o_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48762096827_9268ea1e73_o_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48762096802_b6063aac2d_o_d.jpg"
+      }
+    ],
+    "synopsis": "A haven for endangered alpine vegetation and Vermont's third highest peak.",
+    "body": ""
+  },
+  "metadata": {
+    "id": "camels-hump",
+    "title": "Camel's Hump",
+    "date": "2018-09-02T04:00:00.000Z",
+    "location": {
+      "city": "Huntington",
+      "state": "VT",
+      "country": "USA"
+    },
+    "tags": [
+      "4k Footer",
+      "Hiking",
+      "Alpine Tundra"
+    ]
+  }
+}
