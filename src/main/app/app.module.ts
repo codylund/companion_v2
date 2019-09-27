@@ -18,10 +18,19 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { WhoComponent } from './components/who/who.component';
 import { PageMetadataService } from './core/service/page-metadata.service';
 import { PlaceListControllerComponent } from './components/place-list-controller/place-list-controller.component';
+import { NewPlaceComponent } from './components/new-place/new-place.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { MarkdownModule } from 'ngx-markdown';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BlogComponent,
     NuggetComponent,
     NavComponent,
     MetadataComponent,
@@ -29,6 +38,7 @@ import { PlaceListControllerComponent } from './components/place-list-controller
     GalleryComponent,
     WhoComponent,
     PlaceListControllerComponent,
+    NewPlaceComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -36,6 +46,12 @@ import { PlaceListControllerComponent } from './components/place-list-controller
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MarkdownModule.forRoot(),
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatCardModule,
     MatSelectModule,
     ReactiveFormsModule
   ],

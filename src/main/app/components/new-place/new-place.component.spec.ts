@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NuggetListComponent } from './nugget-list.component';
+import { NewPlaceComponent } from './new-place.component';
 
-describe('NuggetListComponent', () => {
-  let component: NuggetListComponent;
-  let fixture: ComponentFixture<NuggetListComponent>;
+describe('NewPlaceComponent', () => {
+  let component: NewPlaceComponent;
+  let fixture: ComponentFixture<NewPlaceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NuggetListComponent ]
+      declarations: [ NewPlaceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NuggetListComponent);
+    fixture = TestBed.createComponent(NewPlaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

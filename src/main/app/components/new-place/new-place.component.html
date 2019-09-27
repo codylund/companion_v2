@@ -1,0 +1,92 @@
+<div class="container">
+    <mat-card>
+        <h2 mat-subheader>Metadata</h2>
+
+        <mat-form-field appearance="outline">
+            <mat-label>ID</mat-label>
+            <input matInput [(ngModel)]="id">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="title">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date (MM/DD/YYYY)</mat-label>
+            <input matInput [(ngModel)]="date">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Synopsis</mat-label>
+            <textarea matInput [(ngModel)]="synopsis"></textarea>
+        </mat-form-field>
+
+    </mat-card>
+
+    <mat-card>
+        <h2 mat-subheader>Location</h2>
+
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput [(ngModel)]="city">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>State</mat-label>
+            <input matInput [(ngModel)]="state">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Country</mat-label>
+            <input matInput [(ngModel)]="country">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Google Maps Url</mat-label>
+            <input matInput [(ngModel)]="mapsUrl">
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <h2 mat-subheader>Tags</h2>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Tag</mat-label>
+            <input matInput [(ngModel)]="tag">
+        </mat-form-field>
+
+        <button mat-button (click)="saveTag()">ADD TAG</button>
+        <mat-list>
+            <h3 mat-subheader>Tags</h3>
+            <mat-list-item *ngFor="let tag of tags">
+                <h4 mat-line>{{tags}}</h4>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+
+    <mat-card>
+        <h2 mat-subheader>Images</h2>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Image URL</mat-label>
+            <input matInput [(ngModel)]="photo">
+        </mat-form-field>
+
+        <button mat-button (click)="savePhoto()">ADD IMAGE</button>
+
+        <mat-list>
+            <h3 mat-subheader>Images</h3>
+            <mat-list-item *ngFor="let photo of photos">
+                <h4 mat-line>{{photo}}</h4>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+
+    <mat-card>
+        <pre>{{nugget | json}}</pre>
+        <button mat-button (click)="preview()">PREVIEW</button>
+    </mat-card>
+</div>
+
+<app-nugget *ngIf="nugget" [nugget]="nugget"></app-nugget>

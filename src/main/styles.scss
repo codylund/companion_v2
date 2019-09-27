@@ -7,3 +7,12 @@ html, body {
 }
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+h1 {
+    font-family: 'Merriweather', serif;
+}
+
+p, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}

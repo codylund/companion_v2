@@ -1,9 +1,7 @@
 <div class="container">
     
     <!-- Title -->
-    <h1 class="text">
-        {{ metadata.title }}
-    </h1>
+    <h1 class="text">{{ metadata.title }}</h1>
 
     <!-- Location -->
     <h2 class="text">    
@@ -13,13 +11,5 @@
     <!-- Date -->
     <h3 class="text">
         <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;{{ metadata.date.toLocaleDateString("en-us", { year: 'numeric', month: 'long', day: 'numeric' }) }}
-    </h3>            
-
-    <!-- Display the tags -->
-    <div class="tags">
-        <!-- TODO: search for nuggets by tag onclick -->
-        <div *ngFor="let tag of metadata.tags">
-            <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ tag }}
-        </div>
-    </div>
+    </h3>
 </div>
