@@ -37,7 +37,7 @@ export class NuggetListComponent implements OnInit {
   ngOnInit() {
     this.pageMetadataService.post(PageMetadatas.places)
 
-    this.nuggetService.getNugget('teotihuacan').subscribe(nugget => this.highlight = nugget)
+    this.nuggetService.getNugget('kinsman-ridge').subscribe(nugget => this.highlight = nugget)
 
     // Observe the currently loaded nuggets.
     this.nuggetService.observeCurrentNuggets().subscribe((loadedNuggets) => {
