@@ -9,21 +9,21 @@ export class PageMetadatas {
      * Default page title.
      */
     static default: PageMetadata = {
-        title: "Cody Lund"
+        title: "Waste Your Twenties"
     };
 
     /**
      * Page title for the Who page.
      */
     static who: PageMetadata = {
-        title: "Who is Cody Lund?"
+        title: "Who"
     };
     
     /**
      * Page title for main list of places.
      */
     static places: PageMetadata = {
-        title: "Cody Lund | Oh, the places I've been!"
+        title: "Oh, the places you'll go!"
     };
     
     /**

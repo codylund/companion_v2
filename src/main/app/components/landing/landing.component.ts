@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Nugget } from 'src/main/shared/model';
 import { NuggetService } from '../../core/service/nugget.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { PageMetadataService } from '../../core/service/page-metadata.service';
+import { PageMetadatas } from '../../core/site/PageMetadatas';
 
 @Component({
   selector: 'app-landing',
@@ -17,9 +19,11 @@ export class LandingComponent implements OnInit {
   constructor(
     private nuggetService: NuggetService, 
     private domSanitizer: DomSanitizer,
+    private pageMetadataService: PageMetadataService
   ) { }
 
   ngOnInit() {
+    this.pageMetadataService.post(PageMetadatas.default)
     this.nuggetService.getNugget('kinsman-ridge').subscribe(nugget => this.highlight = nugget)
   }
 

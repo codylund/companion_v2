@@ -15,13 +15,10 @@ const routes: Routes = [
     path: 'places', component: NuggetListComponent
   },
   {
-    path: 'blog', component: BlogComponent
+    path: 'places/:id', component: NuggetComponent 
   },
   {
     path: 'places/make', component: NewPlaceComponent 
-  },
-  {
-    path: 'places/:id', component: NuggetComponent 
   },
   {
     path: 'who', component: WhoComponent
