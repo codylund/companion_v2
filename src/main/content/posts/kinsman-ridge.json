@@ -1,0 +1,38 @@
+{
+  "content": {
+    "photos": [{
+        "url": "https://live.staticflickr.com/65535/48814105287_d65f9883db_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48813957511_d49cc8a6e1_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48813956946_dd081a7abe_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48813600868_f0da232f4c_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48814105482_dec5a60eb2_k_d.jpg"
+      }
+    ],
+    "synopsis": "A wet, rugged clamber over Cannon Mountain and the north and south peaks of Kinsman Mountain.",
+    "body": ""
+  },
+  "metadata": {
+    "id": "kinsman-ridge",
+    "title": "Kinsman Ridge Trail",
+    "date": "2019-09-29T04:00:00.000Z",
+    "location": {
+      "url": "https://goo.gl/maps/LB5QS8XR3w5DJEM86",
+      "city": "Franconia Notch",
+      "state": "NH",
+      "country": "USA"
+    },
+    "tags": [
+      "Appalachian Trail",
+      "Hike",
+      "Peak Bag"
+    ]
+  }
+}

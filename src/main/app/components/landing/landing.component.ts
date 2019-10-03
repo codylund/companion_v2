@@ -20,7 +20,7 @@ export class LandingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.nuggetService.getNugget('teotihuacan').subscribe(nugget => this.highlight = nugget)
+    this.nuggetService.getNugget('kinsman-ridge').subscribe(nugget => this.highlight = nugget)
   }
 
   getSanitizedUrl(url: string) {
