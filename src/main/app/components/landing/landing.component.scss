@@ -34,19 +34,20 @@
 }
 
 .header {
-    padding: 32px;
+    padding: 18px 32px;
     text-align: right;
     margin: 0 auto;
-    background-color: orange;
-    color: white;
+    background-color: transparent;
+    color: #cccccc;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-style: italic;
-
+    
     outline: none;
 
     &:hover {
         cursor: pointer;
+        color: #ffffff;
     }
 }
 
@@ -112,7 +113,6 @@
                 max-width: 500px;
 
                 padding-left: 32px;
-                padding-bottom: 32px;
                 padding-right: 32px;
 
                 color: #cccccc;
