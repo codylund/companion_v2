@@ -19,6 +19,11 @@ export class NuggetProviderImpl implements NuggetProvider {
             .pipe(map(res => new Nugget(res)));
     }
 
+    getRandom(): Observable<Nugget> {
+        return this.http.get(`${ this.endpoint }/api/random`)
+            .pipe(map(res => new Nugget(res)));
+    }
+
     getLatest(pageIndex: number, filters: NuggetFilters): Observable<NuggetPage>  {
         var url = this.getLatestUrl(pageIndex);
 

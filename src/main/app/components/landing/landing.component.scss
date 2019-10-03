@@ -1,0 +1,123 @@
+.primary {
+    display: flex;
+    height: 80vh;
+    background-image: url("/assets/map.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.mission {
+    background-color: black;
+    margin: auto;
+
+    color: white;
+
+    .numbers {
+        margin: 16px;
+
+        font-family: 'Merriweather', serif;
+        font-size: 48px;
+    }
+
+    .define {
+        margin: 16px;        
+
+        font-size: 24px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .goal {
+        margin: 16px 16px 32px 16px;
+
+        font-size: 24px;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+.header {
+    padding: 32px;
+    text-align: right;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// Spotlighted item.
+.spotlight {
+    width: 100%;
+    height: 90vh;
+
+    .thumbnail {
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+
+        display: flex;
+        justify-content: left;
+        align-items: left; 
+        flex-direction: column;
+        background-color: black;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .text {
+            background-color: #000000aa;
+            margin-top: auto;
+
+            & > * {
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+
+            h1 {
+                text-align: left;
+                margin-left: 32px;
+                margin-right: 32px;
+
+                padding-top: 32px;
+                padding-bottom: 8px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-shadow: 0 1px 5px black;
+                color: #ffffff;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-style: italic;
+                border-bottom: solid 1px white;
+            }
+
+            h2 {
+                text-align: left;
+                
+                padding-left: 32px;
+                padding-right: 32px;
+                padding-bottom: 8px;
+                padding-top: 8px;
+
+                font-family: 'Merriweather', serif;
+                text-shadow: 0 1px 5px black;
+                color: white;
+            }
+
+            p {
+                max-width: 500px;
+
+                padding-left: 32px;
+                padding-bottom: 32px;
+                padding-right: 32px;
+
+                color: #cccccc;
+            }
+
+        }
+    } 
+}

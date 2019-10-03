@@ -4,6 +4,7 @@ import { NuggetPage } from '../../../shared/model/NuggetPage';
 import { NuggetFilters } from '../site/NuggetFilters';
 
 export interface NuggetProvider {
+    getRandom(): Observable<Nugget>
     getNugget(id: string): Observable<Nugget>
     getLatest(pageIndex: number, filters: NuggetFilters): Observable<NuggetPage>
 }

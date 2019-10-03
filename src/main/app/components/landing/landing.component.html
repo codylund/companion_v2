@@ -1,0 +1,30 @@
+
+<div class="primary">
+    <div class="mission">
+        <div class="numbers">
+            The third decade.
+        </div>
+        <div class="define">
+            The pinnacle of health, optimism, and freedom in human life.
+        </div>
+        <div class="goal">
+            Waste is wisely.
+        </div>
+    </div>
+</div>
+
+<div *ngIf="highlight" class="spotlight">
+    <div class="thumbnail"
+        [style.background-image]="getSanitizedUrl(highlight.content.photos[0].url)"
+        [routerLink]="['/places/', highlight.metadata.id]">
+        <div class="text">
+            <h1>Inspiration</h1>
+            <h2>{{ highlight.metadata.title }}</h2>
+            <p>{{ highlight.content.synopsis }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="inspiration">
+    <div class="header" [routerLink]="['/places']">More Places >></div>
+</div>

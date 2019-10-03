@@ -1,24 +1,5 @@
-<div *ngIf="highlight" class="spotlight">
-    <div class="thumbnail"
-        [style.background-image]="getSanitizedUrl(highlight.content.photos[0].url)"
-        [routerLink]="['/places/', highlight.metadata.id]">
-        <div class="text">
-            <h1>Highlight</h1>
-            <h2>{{ highlight.metadata.title }}</h2>
-            <p>{{ highlight.content.synopsis }}</p>
-        </div>
-    </div>
-</div>
-
-<div class="intro">
-    <img src="assets/mindfuck.svg" />
-    
-    <h1>
-        Rebuilding my world view 
-        <br>
-        through first-hand experiences.
-    </h1>
-    
+<div>
+    <div class="header">Places</div>
 </div>
 
 <app-place-list-controller></app-place-list-controller>

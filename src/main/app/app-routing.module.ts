@@ -5,10 +5,14 @@ import { NuggetListComponent } from './components/nugget-list/nugget-list.compon
 import { WhoComponent } from './components/who/who.component';
 import { NewPlaceComponent } from './components/new-place/new-place.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 const routes: Routes = [
   {
-    path: '', component: NuggetListComponent
+    path: '', component: LandingComponent
+  },
+  {
+    path: 'places', component: NuggetListComponent
   },
   {
     path: 'blog', component: BlogComponent
@@ -29,7 +33,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

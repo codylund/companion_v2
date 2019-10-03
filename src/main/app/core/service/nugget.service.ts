@@ -68,6 +68,10 @@ export class NuggetService {
     });
   }
 
+  getRandomNugget() {
+    return this.nuggetProvider.getRandom();
+  }
+
   getNugget(id: string) {
     return this.nuggetProvider.getNugget(id);
   }

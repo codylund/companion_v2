@@ -26,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MarkdownModule } from 'ngx-markdown';
 import { BlogComponent } from './components/blog/blog.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BlogComponent } from './components/blog/blog.component';
     WhoComponent,
     PlaceListControllerComponent,
     NewPlaceComponent,
+    LandingComponent,
   ],
   imports: [
     AppRoutingModule,

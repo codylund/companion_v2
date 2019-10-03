@@ -10,96 +10,13 @@ $margin-nugget: 16px;
     width: 100%;
 }
 
-// Spotlighted item.
-.spotlight {
-    width: 100%;
-    height: 90vh;
-
-    .thumbnail {
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-
-        display: flex;
-        justify-content: left;
-        align-items: left; 
-        flex-direction: column;
-        background-color: black;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        .text {
-            background-color: #000000aa;
-            margin-top: auto;
-
-            & > * {
-                margin-block-start: 0;
-                margin-block-end: 0;
-            }
-
-            h1 {
-                text-align: left;
-                margin-left: 32px;
-                margin-right: 32px;
-
-                padding-top: 32px;
-                padding-bottom: 8px;
-                font-family: Arial, Helvetica, sans-serif;
-                text-shadow: 0 1px 5px black;
-                color: #ffffff;
-                font-size: 16px;
-                text-transform: uppercase;
-                font-style: italic;
-                border-bottom: solid 1px white;
-            }
-
-            h2 {
-                text-align: left;
-                
-                padding-left: 32px;
-                padding-right: 32px;
-                padding-bottom: 8px;
-                padding-top: 8px;
-
-                font-family: 'Merriweather', serif;
-                text-shadow: 0 1px 5px black;
-                color: white;
-            }
-
-            p {
-                max-width: 500px;
-
-                padding-left: 32px;
-                padding-bottom: 32px;
-                padding-right: 32px;
-
-                color: #cccccc;
-            }
-
-        }
-    } 
-}
-
-.intro {
-    margin: auto;
-    padding: 32px 16px 16px 16px;
-
+.header {
+    padding: 32px 32px 0px 32px;
     text-align: center;
-    max-width: 400px;
-
-    img {
-        max-width: 100px;
-        height: auto;
-    }
-
-    h1 {
-        font-family: 'Merriweather', serif;
-        text-align: center;
-        font-size: 24px;
-        margin-block-start: 0;
-    }
+    margin: 0 auto;
+    color: black;
+    font-family: 'Merriweather', serif;
+    font-size: 32px;
 }
 
 .nuggetList {
