@@ -8,11 +8,12 @@
     "build:app:dev": "ng build",
     "build:app:prod": "ng build --prod",
     "build:content": "cp -R ./src/main/content ./dist/content",
+    "build:instagram": "tsc -p ./tsconfig.instagram.json",
     "build:server": "tsc -p ./tsconfig.server.json",
     "clean:content": "rm -rf ./dist/content",
     "rebuild:content": "npm run clean:content && npm run build:content",
     "start": "npm run start:server:prod",
-    "start:server": "node ./dist/server/index.js --port $PORT --static ./dist/www --content ./dist/content/posts",
+    "start:server": "node ./dist/server/index.js --port $PORT --static ./dist/www --content ./dist/content/places",
     "start:server:dev": "set PORT=8080 && npm run start:server",
     "start:server:prod": "npm run start:server -- --prod"
   },
