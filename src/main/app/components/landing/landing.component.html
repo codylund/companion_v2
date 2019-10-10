@@ -1,11 +1,11 @@
 
-<div class="primary">
-    <video autoplay loop [muted]="true">
+<div class="mission">
+    <video autoplay poster="#000000" loop [muted]="true">
         <source
             src="https://lh3.googleusercontent.com/2EI1TndqlrPpSqXXd-FbNB1v7QUN7YueIPNHDtvdwlL8jYZ7EfhDp5yYQXF9lM_yVyHhge_LcZOY2Dhf-pChS39MnXWWJl4DM9Yg1ifOKzEEbYYN3nRYc3ekmiPuMy-DoHuQf6B8=m18"
             type="video/mp4">
     </video>
-    <div class="mission">
+    <div class="text">
         <div class="numbers">
             The third decade.
         </div>
@@ -22,11 +22,13 @@
     <div class="thumbnail"
         [style.background-image]="getSanitizedUrl(highlight.content.photos[0].url)"
         [routerLink]="['/places/', highlight.metadata.id]">
-        <div class="text">
-            <h1>Inspiration</h1>
-            <h2>{{ highlight.metadata.title }}</h2>
-            <p>{{ highlight.content.synopsis }}</p>
-            <div class="header" [routerLink]="['/places']">More Places >></div>
+        <div class="textContainer">
+            <div class="text">
+                <h1>Highlight</h1>
+                <h2>{{ highlight.metadata.title }}</h2>
+                <p>{{ highlight.content.synopsis }}</p>
+                <div class="header" [routerLink]="['/places']">More Places >></div>
+            </div>
         </div>
     </div>
 </div>

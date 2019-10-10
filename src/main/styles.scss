@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 html, body {
     margin: 0;
     padding: 0;
@@ -6,13 +8,16 @@ html, body {
     width: 100%;
 }
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-
 h1 {
-    font-family: 'Merriweather', serif;
+    @include primary-font-family;
 }
 
 p, h2, h3 {
-    font-family: 'Roboto', sans-serif;
+    @include secondary-font-family;
+}
+
+// Remove all outlines. Angular likes to add these to elements
+// with router links. I don't use this style anywhere anyways.
+* {
+    outline: none;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,11 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  showSearch = false;
+  /**
+   * Is true when the root route is activated.
+   */
+  isRootRoute = false;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { 
+    // Listen for nav events to/from the root route.
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isRootRoute = ("/" == event.url);
+      }
+    });
+  }
 
   ngOnInit() {
   }
-
 }

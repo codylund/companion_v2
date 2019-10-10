@@ -1,15 +1,10 @@
+@import 'variables';
+
+$font-color: white;
+
 :host {
-    //display: block;
-    height: fit-content;
-    padding: 8px;
-
-    padding-left: 16px;
-    padding-right: 16px;
-
-    background-color: orange;
     z-index: 1;
-
-    color: white;
+    color: $font-color;
 }
 
 // Container for all the navigation items.
@@ -19,18 +14,22 @@
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    width: 100%;
+
+    padding: 16px;
+
+    background-color: $primary-color;
+}
+
+// Applied to container when root route is activated.
+.rootRoute {
+    background-color: transparent;
 }
 
 // Navigation item.
 .item {
-    padding: 8px;
+    padding: 8px 16px;
 
-    margin-left: 8px;
-    margin-right: 8px;
-
-    font-family: 'Merriweather', serif;
-    height: fit-content;
+    @include primary-font-family;
 
     img {
         height: 50px;
@@ -38,16 +37,11 @@
     }
 
     &:focus {
-        outline: none;
         border: 0;
     }
 
     &:hover {
         cursor: pointer;
-        color: darken(white, 10%);
+        color: darken($font-color, 5%);
     }
-}
-
-.flex-fill {
-    flex: 1;
 }
