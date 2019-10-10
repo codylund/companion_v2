@@ -15,7 +15,7 @@ $font-color: white;
     justify-content: left;
     align-items: center;
 
-    padding: 16px;
+    padding: 8px;
 
     background-color: $primary-color;
 }
@@ -32,7 +32,7 @@ $font-color: white;
     @include primary-font-family;
 
     img {
-        height: 50px;
+        height: 40px;
         width: auto;
     }
 
