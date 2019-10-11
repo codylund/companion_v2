@@ -27,6 +27,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MarkdownModule } from 'ngx-markdown';
 import { BlogComponent } from './components/blog/blog.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { InstagramHighlightComponent } from './components/instagram-highlight/instagram-highlight.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LandingComponent } from './components/landing/landing.component';
     PlaceListControllerComponent,
     NewPlaceComponent,
     LandingComponent,
+    InstagramHighlightComponent,
   ],
   imports: [
     AppRoutingModule,

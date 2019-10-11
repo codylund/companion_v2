@@ -6,6 +6,7 @@ import { WhoComponent } from './components/who/who.component';
 import { NewPlaceComponent } from './components/new-place/new-place.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { InstagramHighlightComponent } from './components/instagram-highlight/instagram-highlight.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: 'who', component: WhoComponent
+  },
+  {
+    path: 'instagram', component: InstagramHighlightComponent
   },
   {
     // Redirect to the nugget list.

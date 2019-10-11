@@ -1,9 +1,9 @@
 {
     "extends": "./tsconfig.base.json",
     "include": [
-        "./src/main/server/**/*"
+        "./scripts/instagram.ts"
     ],
     "compilerOptions": {
-        "outDir": "./dist",
+        "outDir": "./bin"
     }
 }
