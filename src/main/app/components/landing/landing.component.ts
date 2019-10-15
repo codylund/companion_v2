@@ -24,7 +24,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
     this.pageMetadataService.post(PageMetadatas.default)
-    this.nuggetService.getNugget('kinsman-ridge').subscribe(nugget => this.highlight = nugget)
+    this.nuggetService.getNugget('gravel-growler').subscribe(nugget => this.highlight = nugget)
   }
 
   getSanitizedUrl(url: string) {

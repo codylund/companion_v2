@@ -1,0 +1,61 @@
+{
+  "content": {
+    "photos": [{
+        "url": "https://live.staticflickr.com/65535/48900594778_515600cc78_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48900594968_2625a5ab17_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48901122786_177e36e2d5_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48900595778_3fc97b6f1c_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48900598853_9fe5c96c3c_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48901124596_94c481713b_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48900597488_6c02e23191_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48901125326_d0c4ff097a_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48900598178_18cecd15ea_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48900598433_0bce146220_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48901126046_f1c3a1dc86_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48901126626_b05f37b137_k_d.jpg"
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48901127286_ceff2bc125_k_d.jpg"
+      }
+    ],
+    "synopsis": "A modified (shortened) version of a popular gravel route connecting Vermont's legendary breweries.",
+    "body": ""
+  },
+  "metadata": {
+    "id": "gravel-growler",
+    "title": "Green Mountain Gravel Growler",
+    "date": "2019-10-14T04:00:00.000Z",
+    "location": {
+      "url": "https://goo.gl/maps/1wkpFX821j6ySbPM7",
+      "state": "Vermont",
+      "country": "USA"
+    },
+    "tags": [
+      "Beer",
+      "Bikepacking",
+      "Gravel"
+    ]
+  }
+}

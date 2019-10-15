@@ -1,4 +1,6 @@
 <div class="highlight" *ngIf="highlight">
+    <app-dyanamic-link *ngFor="let media of highlight.medias" [url]="media.url"></app-dyanamic-link>
+
     <div class="controls">
         <div class="control" (click)="last()"></div>
         <div class="control" (click)="next()"></div>

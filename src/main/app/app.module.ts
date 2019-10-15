@@ -28,6 +28,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { BlogComponent } from './components/blog/blog.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { InstagramHighlightComponent } from './components/instagram-highlight/instagram-highlight.component';
+import { DyanamicLinkComponent } from './components/dyanamic-link/dyanamic-link.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { InstagramHighlightComponent } from './components/instagram-highlight/in
     NewPlaceComponent,
     LandingComponent,
     InstagramHighlightComponent,
+    DyanamicLinkComponent,
   ],
   imports: [
     AppRoutingModule,
