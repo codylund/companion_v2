@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class DyanamicLinkComponent implements OnInit {
 
-  @Input() url: String;
+  @Input() url: string;
 
   constructor(
     private domSanitizer: DomSanitizer
