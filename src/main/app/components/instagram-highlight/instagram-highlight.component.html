@@ -1,6 +1,4 @@
 <div class="highlight" *ngIf="highlight">
-    <app-dyanamic-link *ngFor="let media of highlight.medias" [url]="media.url"></app-dyanamic-link>
-
     <div class="controls">
         <div class="control" (click)="last()"></div>
         <div class="control" (click)="next()"></div>
@@ -8,6 +6,9 @@
 
     <div class="content">
         <div class="media">
+            <div class="spinnerContainer">
+                <mat-spinner [diameter]="100"></mat-spinner>
+            </div>
             <video *ngIf="media.type == 2" [src]="media.url" autoplay [muted]="true" (ended)="next()"></video>
             <img *ngIf="media.type == 1" src="{{ media.url }}"/>
         </div>

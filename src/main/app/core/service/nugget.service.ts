@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Nugget } from '../../../shared/model';
 import { NuggetProviderFactory } from '../provider/NuggetProviderFactory';
 import { NuggetProvider } from '../provider/NuggetProvider';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { LoadedNuggets } from '../site/LoadedNuggets';
-import { count } from 'rxjs/operators';
+import { count, take } from 'rxjs/operators';
+import { NuggetPage } from 'src/main/shared/model/NuggetPage';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,8 @@ export class NuggetService {
   private countries: string[] = [];
 
   private nuggetsSubscribers: ((nuggets: LoadedNuggets) => any)[] = [] 
+
+  private pendingRequests: Subscription[] = [];
 
   /**
    * Observable for watching nuggets to display.
@@ -53,9 +56,10 @@ export class NuggetService {
    * Asynchronously load more nuggets.
    */
   loadMore() {
-    this.nuggetProvider.getLatest(this.nextPage++, {
+    var subscription = this.nuggetProvider.getLatest(this.nextPage++, {
       countries: this.countries
-    }).subscribe(page => {
+    }).pipe(take(1))
+    .subscribe(page => {
       this.nuggets.push(...page.nuggets);
 
       // Alert subscribers of the new nuggets.
@@ -66,6 +70,9 @@ export class NuggetService {
         });
       })
     });
+
+    // Track the request so we can cancel it if needed.
+    this.pendingRequests.push(subscription);
   }
 
   getRandomNugget() {
@@ -81,16 +88,19 @@ export class NuggetService {
   }
 
   setCountries(countries: string[]) {
-    console.log(countries);
-    if (!countries)
-      countries = [];
-    this.countries = countries;
     this.reset();
+
+    if (countries)
+      this.countries = countries;
+
+    this.loadMore();
   }
 
   private reset() {
+    this.pendingRequests.forEach(req => req.unsubscribe());
+    this.pendingRequests = [];
+    this.countries = [];
     this.nuggets = [];
     this.nextPage = 0;
-    this.loadMore();
   }
 }

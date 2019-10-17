@@ -4,6 +4,10 @@
 
 <app-place-list-controller></app-place-list-controller>
 
+<div class="spinnerContainer">
+    <mat-spinner *ngIf="isLoading" [diameter]="50"></mat-spinner>
+</div>
+
 <div class="nuggetList">
     <div *ngFor="let n of nuggets">
         <div class="nugget">

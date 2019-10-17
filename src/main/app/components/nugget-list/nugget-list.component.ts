@@ -28,7 +28,7 @@ export class NuggetListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pageMetadataService.post(PageMetadatas.places)
+    this.pageMetadataService.post(PageMetadatas.places);
 
     // Observe the currently loaded nuggets.
     this.nuggetService.observeCurrentNuggets().subscribe((loadedNuggets) => {

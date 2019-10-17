@@ -23,7 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MarkdownModule } from 'ngx-markdown';
 import { BlogComponent } from './components/blog/blog.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -58,6 +59,7 @@ import { DyanamicLinkComponent } from './components/dyanamic-link/dyanamic-link.
     MatFormFieldModule,
     MatListModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     MatSelectModule,
     ReactiveFormsModule
   ],
