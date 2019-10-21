@@ -1,0 +1,80 @@
+{
+  "content": {
+    "photos": [{
+      "url": "https://live.staticflickr.com/65535/48932517676_0a6ef57194_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932704987_f921222020_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932518641_d1952a26f2_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932705907_807518ae02_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932706692_e11ef42728_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48931980433_537fe0793a_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48931980613_9d3d9ab5b5_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932521021_2b09a7750a_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48931981293_74dbec454b_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932521616_866b6468fa_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48931981823_e2b408d916_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932708682_e33f4ada43_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932522231_10c782db6b_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932522741_7ab19810aa_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48931978008_6ea149fc13_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932709662_ba10e64bc0_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932710162_83eefaf240_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48932710557_0d1074ef9f_k.jpg",
+      "caption": ""
+    }, {
+      "url": "https://live.staticflickr.com/65535/48931984373_fd86401ca1_k.jpg",
+      "caption": ""
+    }],
+    "synopsis": "Fall fades with elevation gains.",
+    "body": ""
+  },
+  "metadata": {
+    "id": "mt-jefferson",
+    "title": "Mount Jefferson",
+    "date": "2019-10-20T04:00:00.000Z",
+    "location": {
+      "url": "https://goo.gl/maps/HEZ3YtjsNShj6j7t6",
+      "city": "Randolph",
+      "state": "NH",
+      "country": "USA"
+    },
+    "tags": [
+      "Backpacking",
+      "Winter Hiking",
+      "White Mountains"
+    ]
+  }
+}
