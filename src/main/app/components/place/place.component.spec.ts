@@ -1,16 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NuggetComponent } from './nugget.component';
-import { NuggetService } from '../../core/service/nugget.service';
-import { Nugget } from 'src/main/shared/model';
+import { PlaceComponent } from './place.component';
+import { PlaceService } from '../../core/service/place.service';
+import { Place } from 'src/main/shared/model';
 import { MetadataComponent } from '../metadata/metadata.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { GalleryComponent } from '../gallery/gallery.component';
 import { of } from 'rxjs';
-import { longStackSupport } from 'q';
 
 
-var mockNugget = new Nugget({
+var mockPlace = new Place({
   metadata: {
     id: "testId",
     title: "testTitle",
@@ -44,15 +43,15 @@ var mockNugget = new Nugget({
   }
 });
 
-class MockNuggetService {
-  getNugget(id: string) {
-    return of(mockNugget);
+class MockPlaceService {
+  getPlace(id: string) {
+    return of(mockPlace);
   }
 }
 
-describe('NuggetComponent', () => {
-  let component: NuggetComponent;
-  let fixture: ComponentFixture<NuggetComponent>;
+describe('PlaceComponent', () => {
+  let component: PlaceComponent;
+  let fixture: ComponentFixture<PlaceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -61,18 +60,18 @@ describe('NuggetComponent', () => {
       ],
       declarations: [
         GalleryComponent,
-        NuggetComponent,
+        PlaceComponent,
         MetadataComponent
       ],
       providers: [
-        NuggetComponent,
-        { provide: NuggetService, useClass: MockNuggetService}
+        PlaceComponent,
+        { provide: PlaceService, useClass: MockPlaceService}
       ]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NuggetComponent);
+    fixture = TestBed.createComponent(PlaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -81,7 +80,7 @@ describe('NuggetComponent', () => {
     const element: HTMLElement = fixture.debugElement.nativeElement;
     const h1 = element.querySelector("h1");
 
-    expect(h1.textContent).toEqual(mockNugget.metadata.title);
+    expect(h1.textContent).toEqual(mockPlace.metadata.title);
   });
 
   it('should have a <h2> location w/ link', () => {
@@ -89,7 +88,7 @@ describe('NuggetComponent', () => {
     const h2 = element.querySelector("h2");
     const a = h2.querySelector("a");
 
-    var location = mockNugget.metadata.location;
+    var location = mockPlace.metadata.location;
     expect(a.textContent).toContain(`${location.city}, ${location.state}, ${location.country}`);
     expect(a.getAttribute("href")).toEqual(location.url);
   });
@@ -98,7 +97,7 @@ describe('NuggetComponent', () => {
     const element: HTMLElement = fixture.debugElement.nativeElement;
     const h3 = element.querySelector("h3");
 
-    var date = mockNugget.metadata.date.toLocaleDateString("en-us", {
+    var date = mockPlace.metadata.date.toLocaleDateString("en-us", {
       month: 'long', day: 'numeric', year: 'numeric'
     });
     expect(h3.textContent).toContain(date);
@@ -108,7 +107,7 @@ describe('NuggetComponent', () => {
     const element: HTMLElement = fixture.debugElement.nativeElement ;
     const synopsis = element.getElementsByClassName('synopsis').item(0);
 
-    expect(synopsis.textContent).toContain(mockNugget.content.synopsis);
+    expect(synopsis.textContent).toContain(mockPlace.content.synopsis);
   })
 
   it('should have all the images', () => {
@@ -116,7 +115,7 @@ describe('NuggetComponent', () => {
     const images = element.querySelectorAll('img');
 
     images.forEach((img, idx) => {
-      expect(img.getAttribute('src')).toEqual(mockNugget.content.photos[idx].url);
+      expect(img.getAttribute('src')).toEqual(mockPlace.content.photos[idx].url);
     });
   })
 });

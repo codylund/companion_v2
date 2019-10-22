@@ -8,14 +8,14 @@
     <mat-spinner *ngIf="isLoading" [diameter]="50"></mat-spinner>
 </div>
 
-<div class="nuggetList">
-    <div *ngFor="let n of nuggets">
-        <div class="nugget">
-            <div class="thumbnail" [routerLink]="['/places/', n.metadata.id]"
-                [style.background-image]="getSanitizedUrl(n.content.photos[0].url)">
-                <h1>{{ n.metadata.title }}</h1>
+<div class="placeList">
+    <div *ngFor="let place of places">
+        <div class="place">
+            <div class="thumbnail" [routerLink]="['/places/', place.metadata.id]"
+                [style.background-image]="getSanitizedUrl(place.content.photos[0].url)">
+                <h1>{{ place.metadata.title }}</h1>
                 <div class="metadata">
-                    <span>{{ n.metadata.location.toString() }}</span>
+                    <span>{{ place.metadata.location.toString() }}</span>
                 </div>
             </div>
         </div>

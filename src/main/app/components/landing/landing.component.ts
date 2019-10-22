@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Nugget } from 'src/main/shared/model';
-import { NuggetService } from '../../core/service/nugget.service';
+import { Place } from 'src/main/shared/model';
+import { PlaceService } from '../../core/service/place.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PageMetadataService } from '../../core/service/page-metadata.service';
 import { PageMetadatas } from '../../core/site/PageMetadatas';
@@ -14,17 +14,17 @@ export class LandingComponent implements OnInit {
   /**
    * The featured place.
    */
-  highlight: Nugget;
+  highlight: Place;
 
   constructor(
-    private nuggetService: NuggetService, 
+    private placeService: PlaceService, 
     private domSanitizer: DomSanitizer,
     private pageMetadataService: PageMetadataService
   ) { }
 
   ngOnInit() {
     this.pageMetadataService.post(PageMetadatas.default)
-    this.nuggetService.getNugget('gravel-growler').subscribe(nugget => this.highlight = nugget)
+    this.placeService.getPlace('gravel-growler').subscribe(place => this.highlight = place)
   }
 
   getSanitizedUrl(url: string) {

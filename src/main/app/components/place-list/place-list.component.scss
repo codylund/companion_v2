@@ -2,7 +2,7 @@
 
 $metadata-background-color: transparent;
 
-$margin-nugget: 16px;
+$margin-place: 16px;
 
 :host {
     @include flex();
@@ -23,23 +23,23 @@ $margin-nugget: 16px;
     margin: 0 auto;
 }
 
-.nuggetList {
+.placeList {
     margin-bottom: 16px;
     width: 100%;
 
-    // Use flexbox to display rows/columns of nuggets.
+    // Use flexbox to display rows/columns of places.
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: stretch;
 
-    .nugget {
+    .place {
         // Flexbox for consistent sizing.
         display: flex;
         flex-direction: column;
         align-items: stretch;
 
-        // Make the nuggets fill the space.
+        // Make the places fill the space.
         flex-grow: 1;
 
         height: 100%;

@@ -1,5 +1,5 @@
 import { PageMetadata } from './PageMetadata';
-import { NuggetMetadata } from 'src/main/shared/model';
+import { PlaceMetadata } from 'src/main/shared/model';
 
 /**
  * Various titles for the website.
@@ -34,9 +34,9 @@ export class PageMetadatas {
      * 
      * @returns the title.
      */
-    static forPlace(nuggetMetadata: NuggetMetadata): PageMetadata {
+    static forPlace(placeMetadata: PlaceMetadata): PageMetadata {
         return {
-            title: `Visit ${nuggetMetadata.title} in ${nuggetMetadata.location.toString()}`
+            title: `Visit ${placeMetadata.title} in ${placeMetadata.location.toString()}`
         };
     }
 }

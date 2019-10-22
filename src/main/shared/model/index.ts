@@ -1,4 +1,4 @@
-export { Nugget } from "./Nugget";
-export { NuggetContent } from "./NuggetContent";
-export { NuggetMetadata } from "./NuggetMetadata";
+export { Place } from "./Place";
+export { PlaceContent } from "./PlaceContent";
+export { PlaceMetadata } from "./PlaceMetadata";
 export { Photo } from "./Photo";

@@ -69,24 +69,27 @@
         <h2 mat-subheader>Images</h2>
 
         <mat-form-field appearance="outline">
-            <mat-label>Image URL</mat-label>
-            <input matInput [(ngModel)]="photo">
+            <mat-label>Flickr Album Id</mat-label>
+            <input matInput [(ngModel)]="albumId">
         </mat-form-field>
 
-        <button mat-button (click)="savePhoto()">ADD IMAGE</button>
+        <button mat-button (click)="loadAlbum()">LOAD ALBUM</button>
 
         <mat-list>
             <h3 mat-subheader>Images</h3>
-            <mat-list-item *ngFor="let photo of photos">
-                <h4 mat-line>{{photo}}</h4>
-            </mat-list-item>
+
+            <div cdkDropList (cdkDropListDropped)="dropPic($event)">
+                <div *ngFor="let photo of photos" cdkDrag>
+                    <img width="100%" [src]="photo.url">
+                </div>
+            </div>
         </mat-list>
     </mat-card>
 
     <mat-card>
-        <pre>{{nugget | json}}</pre>
+        <pre>{{place | json}}</pre>
         <button mat-button (click)="preview()">PREVIEW</button>
     </mat-card>
 </div>
 
-<app-nugget *ngIf="nugget" [nugget]="nugget"></app-nugget>
+<app-place *ngIf="place" [place]="place"></app-place>

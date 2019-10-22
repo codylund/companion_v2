@@ -2,7 +2,7 @@ import { RequestHandler } from 'express';
 import { HandlerProvider } from './HandlerProvider';
 import { getLatestHighlight } from '../data/InstagramHighlightsRepo';
 
-export class InstagramHighlightsHandler implements HandlerProvider {
+export class InstagramHighlightsHandlerProvider implements HandlerProvider {
 
     getRoute(): string {
         return "/api/highlights";

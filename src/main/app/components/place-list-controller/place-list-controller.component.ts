@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NuggetService } from '../../core/service/nugget.service';
-import { MatSelectChange } from '@angular/material/select';
+import { PlaceService } from '../../core/service/place.service';
 
 @Component({
   selector: 'app-place-list-controller',
@@ -18,7 +17,7 @@ export class PlaceListControllerComponent implements OnInit {
   selectedCountries: string[] = [];
 
   constructor(
-    private nuggetService: NuggetService
+    private nuggetService: PlaceService
   ) { 
     this.selectedCountries = this.nuggetService.getCountries();
   }
@@ -39,7 +38,7 @@ export class PlaceListControllerComponent implements OnInit {
         return false;
       }
     }
-    
+
     return true;
   }
 }

@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Nugget } from '../../../shared/model';
-import { NuggetService } from '../../core/service/nugget.service';
+import { Place } from '../../../shared/model';
+import { PlaceService } from '../../core/service/place.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PageMetadataService } from '../../core/service/page-metadata.service';
 import { PageMetadatas } from '../../core/site/PageMetadatas';
 
 @Component({
-  selector: 'app-nugget-list',
-  templateUrl: './nugget-list.component.html',
-  styleUrls: ['./nugget-list.component.scss']
+  selector: 'app-place-list',
+  templateUrl: './place-list.component.html',
+  styleUrls: ['./place-list.component.scss']
 })
-export class NuggetListComponent implements OnInit {
+export class PlaceListComponent implements OnInit {
 
   /**
    * The other places.
    */
-  nuggets: Nugget[] = [];
+  places: Place[] = [];
 
   isLoading = true;
   isMore = false;
 
   constructor(
-    private nuggetService: NuggetService, 
+    private placeService: PlaceService, 
     private domSanitizer: DomSanitizer,
     private pageMetadataService: PageMetadataService
   ){ 
@@ -30,10 +30,10 @@ export class NuggetListComponent implements OnInit {
   ngOnInit() {
     this.pageMetadataService.post(PageMetadatas.places);
 
-    // Observe the currently loaded nuggets.
-    this.nuggetService.observeCurrentNuggets().subscribe((loadedNuggets) => {
-      this.nuggets = loadedNuggets.nuggets;
-      this.isMore = loadedNuggets.isMore;
+    // Observe the currently loaded places.
+    this.placeService.observeCurrentPlaces().subscribe((loadedPlaces) => {
+      this.places = loadedPlaces.places;
+      this.isMore = loadedPlaces.isMore;
       this.isLoading = false;
     });
 
@@ -42,12 +42,12 @@ export class NuggetListComponent implements OnInit {
   }
   
   loadNextPage() {
-    // We are loading a page of nuggets.
+    // We are loading a page of places.
     this.isLoading = true;
     // We don't know if there are more pages yet.
     this.isMore = false;
 
-    this.nuggetService.loadMore()
+    this.placeService.loadMore()
   }
 
   getSanitizedUrl(url: string) {

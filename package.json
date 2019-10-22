@@ -8,7 +8,7 @@
     "build:app:dev": "ng build",
     "build:app:prod": "ng build --prod",
     "build:content": "cp -R ./src/main/content ./dist/content",
-    "build:instagram": "tsc -p ./tsconfig.instagram.json",
+    "build:flickr": "tsc -p ./tsconfig.flickr.json",
     "build:server": "tsc -p ./tsconfig.server.json",
     "clean:content": "rm -rf ./dist/content",
     "rebuild:content": "npm run clean:content && npm run build:content",
@@ -42,6 +42,7 @@
     "cors": "^2.8.5",
     "d3": "^5.9.7",
     "d3-geo": "^1.11.6",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-sslify": "^1.2.0",
     "font-awesome": "^4.7.0",
@@ -68,6 +69,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^8.9.5",
     "@types/node-cron": "^2.0.2",
+    "@types/xml2js": "^0.4.5",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -81,6 +83,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "xml2js": "^0.4.22"
   }
 }

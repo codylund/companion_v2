@@ -1,26 +1,28 @@
 import { HandlerProvider } from './HandlerProvider';
-import NuggetHandlerProvider from './NuggetHandlerProvider';
-import { LatestNuggetHandlerProvider } from './LatestNuggetHandlerProvider';
-import { CompositeNuggetIndex } from '../index/CompositeNuggetIndex';
-import { InstagramHighlightsHandler } from './InstagramHightlightsHandler';
+import PlaceHandlerProvider from './PlaceHandlerProvider';
+import { LatestPlaceHandlerProvider } from './LatestPlaceHandlerProvider';
+import { CompositePlaceIndex } from '../index/CompositePlaceIndex';
+import { InstagramHighlightsHandlerProvider } from './InstagramHightlightsHandlerProvider';
+import { FlickrPhotoAlbumHandlerProvider } from './FlickrPhotoAlbumHandlerProvider';
 
 
 export class HandlerFactory {
     constructor(
-        private index: CompositeNuggetIndex
+        private index: CompositePlaceIndex
     ) {
     }
 
     GET(): HandlerProvider[] {
         return [
-            new NuggetHandlerProvider(this.index),
-            new InstagramHighlightsHandler()
+            new PlaceHandlerProvider(this.index),
+            new InstagramHighlightsHandlerProvider(),
+            new FlickrPhotoAlbumHandlerProvider()
         ];
     }
 
     POST(): HandlerProvider[] {
         return [
-            new LatestNuggetHandlerProvider(this.index)
+            new LatestPlaceHandlerProvider(this.index)
         ];
     }
 }

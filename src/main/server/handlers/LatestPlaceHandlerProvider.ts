@@ -1,13 +1,13 @@
 import { RequestHandler } from 'express';
 import { HandlerProvider } from './HandlerProvider';
-import { CompositeNuggetIndex } from '../index/CompositeNuggetIndex';
+import { CompositePlaceIndex } from '../index/CompositePlaceIndex';
 import { QueryUtils } from '../utils/QueryUtils';
 import { PageUtils } from '../utils/PageUtils';
 
-export class LatestNuggetHandlerProvider implements HandlerProvider {
+export class LatestPlaceHandlerProvider implements HandlerProvider {
     
     constructor(
-        private index: CompositeNuggetIndex
+        private index: CompositePlaceIndex
     ) { }
 
     getRoute(): string {
@@ -17,15 +17,13 @@ export class LatestNuggetHandlerProvider implements HandlerProvider {
     getHandler(): RequestHandler {
         return (req, res) => {
             var pageIndex = QueryUtils.parsePageIndex(req.query);
-            console.log(`Request for latest nuggets page ${ pageIndex }`);    
+            console.log(`Request for latest places page ${ pageIndex }`);    
 
             var countries = req.body["countries"] as string[];
 
-            var latestNuggets = this.index.queryNuggets(countries);
+            var latestPlaces = this.index.queryPlaces(countries);
             
-            res.json(PageUtils.getPage(latestNuggets, pageIndex));
+            res.json(PageUtils.getPage(latestPlaces, pageIndex));
         };
     }
-
-
 }

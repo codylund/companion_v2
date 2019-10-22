@@ -1,6 +1,6 @@
 import { Location } from './Location';
 
-export class NuggetMetadata {
+export class PlaceMetadata {
     id: string;
     title: string;
     date: Date;

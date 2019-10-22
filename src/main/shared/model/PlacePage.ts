@@ -1,13 +1,13 @@
-import { Nugget } from './Nugget';
+import { Place } from './Place';
 
-export class NuggetPage {
+export class PlacePage {
     pageIndex: number;
     totalPages: number;
-    nuggets: Nugget[];
+    places: Place[];
 
     constructor(json: any) {
         this.pageIndex = json.pageIndex,
         this.totalPages = json.totalPages,
-        this.nuggets = json.nuggets.map((nugget: any) => new Nugget(nugget))
+        this.places = json.places.map((place: any) => new Place(place))
     }
 }

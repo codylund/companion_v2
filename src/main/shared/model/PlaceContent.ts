@@ -1,6 +1,6 @@
 import { Photo } from './Photo';
 
-export class NuggetContent {
+export class PlaceContent {
     synopsis: string;
     body: string;
     photos: Photo[] = [];

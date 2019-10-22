@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NuggetMetadata } from '../../../shared/model';
+import { PlaceMetadata } from '../../../shared/model';
 
 @Component({
   selector: 'app-metadata',
@@ -8,7 +8,7 @@ import { NuggetMetadata } from '../../../shared/model';
 })
 export class MetadataComponent implements OnInit {
 
-  @Input() metadata: NuggetMetadata;
+  @Input() metadata: PlaceMetadata;
 
   constructor(
   ) { }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Nugget } from 'src/main/shared/model';
+import { Place, Photo } from 'src/main/shared/model';
+import { FlickrService } from '../../core/service/flickr.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-new-place',
@@ -25,12 +27,14 @@ export class NewPlaceComponent implements OnInit {
 
   synopsis: string;
 
-  photo: string;
-  photos: string[] = [];
+  albumId: string;
+  photos: Photo[] = [];
 
-  nugget: Nugget;
+  place: Place;
 
-  constructor() { }
+  constructor(
+    private flickrService: FlickrService
+  ) { }
 
   ngOnInit() {
   }
@@ -43,16 +47,21 @@ export class NewPlaceComponent implements OnInit {
     this.tag = null;
   }
 
-  savePhoto() {
-    if (!this.photo || this.photo.length <= 0)
+  loadAlbum() {
+    if (!this.albumId || this.albumId.length <= 0)
       return;
     
-    this.photos.push(this.photo);
-    this.photo = null;
+    this.flickrService.getPhotos(this.albumId).subscribe(photos => {
+      this.photos = photos;
+    })
+  }
+
+  dropPic(event: CdkDragDrop<Photo[]>) {
+    moveItemInArray(this.photos, event.previousIndex, event.currentIndex);
   }
 
   preview() {
-    this.nugget = new Nugget({
+    this.place = new Place({
       metadata: {
         id: this.id,
         title: this.title,
@@ -68,9 +77,7 @@ export class NewPlaceComponent implements OnInit {
       content: {
         body: "",
         synopsis: this.synopsis,
-        photos: this.photos.map((photo) => {
-          return { url: photo };
-        })
+        photos: this.photos
       }
     });
   }

@@ -8,12 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NuggetComponent } from './components/nugget/nugget.component';
-import { NuggetService } from './core/service/nugget.service';
+import { PlaceComponent } from './components/place/place.component';
+import { PlaceService } from './core/service/place.service';
 import { NavComponent } from './components/nav/nav.component';
 import { MetadataComponent } from './components/metadata/metadata.component';
-import { NuggetListComponent } from './components/nugget-list/nugget-list.component';
-import { NuggetProviderFactory } from './core/provider/NuggetProviderFactory';
+import { PlaceListComponent } from './components/place-list/place-list.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { WhoComponent } from './components/who/who.component';
 import { PageMetadataService } from './core/service/page-metadata.service';
@@ -25,32 +24,32 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MarkdownModule } from 'ngx-markdown';
 import { BlogComponent } from './components/blog/blog.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { InstagramHighlightComponent } from './components/instagram-highlight/instagram-highlight.component';
-import { DyanamicLinkComponent } from './components/dyanamic-link/dyanamic-link.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponent,
-    NuggetComponent,
+    PlaceComponent,
     NavComponent,
     MetadataComponent,
-    NuggetListComponent,
+    PlaceListComponent,
     GalleryComponent,
     WhoComponent,
     PlaceListControllerComponent,
     NewPlaceComponent,
     LandingComponent,
     InstagramHighlightComponent,
-    DyanamicLinkComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    DragDropModule,
     FormsModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
@@ -64,8 +63,7 @@ import { DyanamicLinkComponent } from './components/dyanamic-link/dyanamic-link.
     ReactiveFormsModule
   ],
   providers: [
-    NuggetService,
-    NuggetProviderFactory,
+    PlaceService,
     PageMetadataService
   ],
   bootstrap: [AppComponent]
