@@ -37,6 +37,7 @@
     "@types/d3-geo": "^1.11.1",
     "@types/express-sslify": "^1.2.0",
     "@types/topojson": "^3.2.2",
+    "@types/xml2js": "^0.4.5",
     "body-parser": "^1.19.0",
     "command-line-args": "^5.1.1",
     "cors": "^2.8.5",
@@ -56,6 +57,7 @@
     "rxjs": "~6.4.0",
     "topojson": "^3.0.2",
     "tslib": "^1.9.0",
+    "xml2js": "^0.4.22",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -69,7 +71,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^8.9.5",
     "@types/node-cron": "^2.0.2",
-    "@types/xml2js": "^0.4.5",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -84,6 +85,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "^3.4.5",
-    "xml2js": "^0.4.22"
   }
 }
