@@ -1,0 +1,16 @@
+<ng-container *ngIf="!isSubmitted; else submitted">
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="email">
+        <mat-error *ngIf="emailFormControl.hasError('email')">
+            Enter a valid email address
+        </mat-error>
+    </mat-form-field>
+    <span matSuffix (click)="onSubscribe()">Subscribe</span>
+</ng-container>
+<ng-template #submitted>
+    <div class="subscriptionDetails">
+        Thank you for subscribing! Notifications for new
+        adventures will be delivered directly to your inbox.
+    </div>
+</ng-template>    

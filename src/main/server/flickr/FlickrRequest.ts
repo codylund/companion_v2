@@ -1,12 +1,6 @@
-import { RequestOptions, request } from 'https';
+import { request } from 'https';
 import { QueryParam, toQueryString } from './QueryParam';
 import { parseString } from 'xml2js';
-
-var baseOptions: RequestOptions = {
-    protocol: 'https',
-    hostname: 'www.flickr.com',
-    port: 443
-};
 
 export function flickrRequest(
     method: string, 
@@ -14,8 +8,9 @@ export function flickrRequest(
 ) {
     return new Promise<any>((resolve, reject) => {
         var req = request({
-            hostname: baseOptions.hostname,
-            port: baseOptions.port,
+            protocol: 'https:',
+            hostname: 'www.flickr.com',
+            port: 443,
             path: '/services/rest/?' + toQueryString([
                 {
                     key: 'method',

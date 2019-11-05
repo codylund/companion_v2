@@ -4,6 +4,7 @@ import { LatestPlaceHandlerProvider } from './LatestPlaceHandlerProvider';
 import { CompositePlaceIndex } from '../index/CompositePlaceIndex';
 import { InstagramHighlightsHandlerProvider } from './InstagramHightlightsHandlerProvider';
 import { FlickrPhotoAlbumHandlerProvider } from './FlickrPhotoAlbumHandlerProvider';
+import { SubscriptionHandlerProvider } from './SubscriptionHandlerProvider';
 
 
 export class HandlerFactory {
@@ -22,7 +23,8 @@ export class HandlerFactory {
 
     POST(): HandlerProvider[] {
         return [
-            new LatestPlaceHandlerProvider(this.index)
+            new LatestPlaceHandlerProvider(this.index),
+            new SubscriptionHandlerProvider()
         ];
     }
 }

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
-import { InstagramHighlight } from 'src/main/shared/model/instagram/InstagramHighlight';
 import { Observable } from 'rxjs';
+import { InstagramHighlight } from 'src/main/shared/model/instagram/InstagramHighlight';
 
 @Injectable({
   providedIn: 'root'

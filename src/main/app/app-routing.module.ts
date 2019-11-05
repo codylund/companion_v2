@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PlaceComponent } from './components/place/place.component';
-import { PlaceListComponent } from './components/place-list/place-list.component';
-import { WhoComponent } from './components/who/who.component';
-import { NewPlaceComponent } from './components/new-place/new-place.component';
-import { LandingComponent } from './components/landing/landing.component';
-import { InstagramHighlightComponent } from './components/instagram-highlight/instagram-highlight.component';
+import { PlaceComponent } from './ui/pages/place/place.component';
+import { PlaceListComponent } from './ui/pages/place-list/place-list.component';
+import { WhoComponent } from './ui/pages/who/who.component';
+import { NewPlaceComponent } from './ui/pages/new-place/new-place.component';
+import { LandingComponent } from './ui/pages/landing/landing.component';
+import { InstagramHighlightComponent } from './ui/components/media/instagram-highlight/instagram-highlight.component';
 
 const routes: Routes = [
   {
