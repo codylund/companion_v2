@@ -59,20 +59,6 @@
     }
 }
 
-.emailCollector {
-    background: black;
-    padding: 32px;
-
-    .title {
-        color: white;
-
-        @include primary-font-family;
-        font-size: 24px;
-
-        margin-bottom: 16px;
-    }
-}
-
 // Spotlighted item.
 .spotlight {
     height: 100vh;

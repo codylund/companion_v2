@@ -1,3 +1,5 @@
+@import 'variables';
+
 :host {
     flex-grow: 1;
     z-index: 10000;
@@ -16,12 +18,14 @@
     background-color: transparent;
 
     .details {
-        padding: 32px 16px 16px;
+        padding: 48px 0;
+
+        background-color: $primary-color;
+        color: white;
+        border-top: 1px solid $primary-color;
 
         // Text items.
         .text {
-            font-family: 'Merriweather', serif;
-
             margin-block-start: 0;
             margin-block-end: 0;
             
@@ -35,7 +39,7 @@
             text-decoration: none;
 
             &:hover {
-                color: lighten(black, 25%);
+                color: darken(white, 5%);
             }
         }
 
@@ -43,35 +47,49 @@
             text-align: center;
         }
 
-        h1 {
+        .title {
             font-size: 40px;
+            @include primary-font-family;
         }
 
-        h2 {
-            font-size: 18px;
+        .location {
+
+            i {
+                font-size: 18px;
+            }
+
+            font-size: 22px;
+            @include secondary-font-family;
         }
 
-        h3 {
-            font-size: 14px;
+        .date {
+
+            i {
+                font-size: 14px;
+            }
+
+            font-size: 16px;
+            @include secondary-font-family;
         }
     }
 
     .synopsis {
         width: 100%;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 32px;
+        box-sizing: border-box;
+        max-width: 960px;
+
+        margin: 32px auto;
 
         color: black;
+        border-left: 8px solid $primary-color;
 
         & > * {
             margin: auto;
-            padding: 16px;
+            padding: 24px 16px;
             display: block;
+            @include secondary-font-family;
             font-size: 20px;
-            font-style: italic;
-            text-align: center;
+            text-align: left;
         }
     }
 

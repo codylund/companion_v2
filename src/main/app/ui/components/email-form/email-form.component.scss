@@ -3,8 +3,28 @@
 :host {
     display: flex;
     flex-direction: column;
+
+    background: black;
+    padding: 48px;
 }
 
+.title {
+    color: white;
+
+    @include primary-font-family;
+    font-size: 24px;
+
+    margin-bottom: 16px;
+}
+
+.details {
+    color: #ffffff99;
+
+    @include secondary-font-family;
+    font-size: 18px;
+
+    margin-bottom: 16px;
+}
 
 span {
     @include secondary-font-family;
@@ -20,7 +40,7 @@ span {
 
 .subscriptionDetails {
     @include secondary-font-family;
-    color: white;
+    color: $primary-color;
     size: 16px;
     margin-top: 8px;
 }

@@ -3,17 +3,17 @@
     
     <div class="details">
         <!-- Title -->
-        <h1 class="text">{{ place.metadata.title }}</h1>
+        <div class="text title">{{ place.metadata.title }}</div>
 
         <!-- Location -->
-        <h2 class="text">    
+        <div class="text location">    
             <i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ place.metadata.location.url }}">{{ place.metadata.location.toString() }}</a>
-        </h2>
+        </div>
         
         <!-- Date -->
-        <h3 class="text">
+        <div class="text date">
             <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;{{ place.metadata.date.toLocaleDateString("en-us", { year: 'numeric', month: 'long', day: 'numeric' }) }}
-        </h3>
+        </div>
     </div>
 
     <div class="synopsis">
@@ -22,3 +22,5 @@
 
     <app-gallery [photos]="place.content.photos"></app-gallery>
 </div>
+
+<app-email-form></app-email-form>
