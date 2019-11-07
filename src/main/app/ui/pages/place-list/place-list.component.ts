@@ -13,7 +13,7 @@ import { PageMetadatas } from '../../../core/site/PageMetadatas';
 export class PlaceListComponent implements OnInit {
 
   /**
-   * The other places.
+   * The places.
    */
   places: Place[] = [];
 
@@ -24,8 +24,7 @@ export class PlaceListComponent implements OnInit {
     private placeService: PlaceService, 
     private domSanitizer: DomSanitizer,
     private pageMetadataService: PageMetadataService
-  ){ 
-  }
+  ){ }
 
   ngOnInit() {
     this.pageMetadataService.post(PageMetadatas.places);
@@ -38,16 +37,13 @@ export class PlaceListComponent implements OnInit {
     });
 
     // Load the first page.
-    this.loadNextPage();
+    this.placeService.init();
   }
-  
-  loadNextPage() {
-    // We are loading a page of places.
-    this.isLoading = true;
-    // We don't know if there are more pages yet.
-    this.isMore = false;
 
-    this.placeService.loadMore()
+  loadNextPage() {
+    this.isMore = false;
+    this.isLoading = true;
+    this.placeService.loadMore();
   }
 
   getSanitizedUrl(url: string) {

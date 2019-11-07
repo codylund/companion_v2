@@ -4,10 +4,6 @@
 
 <app-place-list-controller></app-place-list-controller>
 
-<div class="spinnerContainer">
-    <mat-spinner *ngIf="isLoading" [diameter]="50"></mat-spinner>
-</div>
-
 <div class="placeList">
     <div *ngFor="let place of places">
         <div class="place">
@@ -23,4 +19,8 @@
     <div class="moreButton" *ngIf="isMore" (click)="loadNextPage()">
         <div class="moreButtonText">See More</div>
     </div>
+</div>
+
+<div class="spinnerContainer">
+    <mat-spinner *ngIf="isLoading" [diameter]="50"></mat-spinner>
 </div>

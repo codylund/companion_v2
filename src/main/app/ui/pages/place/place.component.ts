@@ -30,12 +30,12 @@ export class PlaceComponent implements OnInit {
   ngOnInit() {
     // Set the initial title.
     this.pageMetadataService.post(PageMetadatas.default);
-    console.log(this.pageMetadataService);
 
     if (this.place) {
+      // Load the inputted place.
       this.onPlaceLoad(this.place);
     } else {
-      // Get the route parameters.
+      // Check the parameter map for the id.
       this.route.paramMap.subscribe((paramMap) => {
         // Get the requested place id from the parameter map.
         var id = paramMap.get('id');
@@ -51,8 +51,8 @@ export class PlaceComponent implements OnInit {
   onPlaceLoad(place: Place) {
     if (place == null)
       return;
+
     this.place = place;
-    console.log(this.pageMetadataService);
     this.pageMetadataService.post(PageMetadatas.forPlace(this.place.metadata));
   }
 
