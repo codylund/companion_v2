@@ -1,0 +1,44 @@
+{
+  "content": {
+    "photos": [{
+        "url": "https://live.staticflickr.com/65535/48970662243_7085f478a5_k.jpg",
+        "caption": ""
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48970661688_fce5755cda_k.jpg",
+        "caption": ""
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48970662408_e8dfeb5cb3_k.jpg",
+        "caption": ""
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48970662653_689f2f05ea_k.jpg",
+        "caption": ""
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48971211461_60b8192e8d_k.jpg",
+        "caption": ""
+      },
+      {
+        "url": "https://live.staticflickr.com/65535/48970661273_29e663f4e6_k.jpg",
+        "caption": ""
+      }
+    ],
+    "synopsis": "Made a 112 mile (180km) push for my first ever imperial century ride. A slight mechanical setback (horribly stripped crank arm bolt) led to a 3 mile hoof to the nearest bike shop. Luckily John and Danny at Benson's Ski and Sport in Derry, NH were able to get me back on the trail with some spare parts they had in the shop. \n<br><br>\nCamped restlessly in Pawtuckaway State Park.\n<br><br>\nList of the trails that kept me safe from insane New England drivers:\n<ul>\n<li>Minuteman Rail Trail</li>\n<li>Reformatory Branch Trail</li>\n<li>Bruce Freeman Rail Trail</li> \n<li>Bay Circuit Trail</li>\n<li>Methuen Rail Trail</li>\n<li>Salem Rail Trail</li>\n<li>Windham Rail Trail</li>\n<li>Londonderry Rail Trail</li> \n<li>Granite State Rail Trail</li>\n<li>Rockingham Recreational Trail</li>\n<li>Clipper City Rail Trail</li>\n</ul>\n",
+    "body": ""
+  },
+  "metadata": {
+    "id": "tour-de-bike-trails",
+    "title": "Tour de Bike Trails",
+    "date": "2019-10-26T04:00:00.000Z",
+    "location": {
+      "state": "New Hampshire",
+      "country": "USA"
+    },
+    "tags": [
+      "Bikepacking",
+      "Century Ride"
+    ]
+  }
+}

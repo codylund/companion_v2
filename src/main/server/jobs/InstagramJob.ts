@@ -4,6 +4,8 @@ import { InstagramMedia } from '../../shared/model/instagram/InstagramMedia';
 import { updateHighlights } from '../data/InstagramHighlightsRepo'
 import { InstagramHighlight } from '../../shared/model/instagram/InstagramHighlight';
 
+let inquirer = require('inquirer');
+
 export function pullInstagramHighlights(username: string) {
     initIg().then(ig => {
         // Search for user.
@@ -55,7 +57,17 @@ async function initIg() {
     const ig = new IgApiClient();
     ig.state.generateDevice('querycody');
     
-    await ig.account.login('querycody', 'poopybutt69');
+    await ig.account.login('querycody', 'poopybutt69').catch(async () => {
+        await ig.challenge.auto(true); // Requesting sms-code or click "It was me" button
+        const { code } = await inquirer.prompt([
+          {
+            type: 'input',
+            name: 'code',
+            message: 'Enter code',
+          },
+        ]);
+        await ig.challenge.sendSecurityCode(code);
+      });
 
     return ig;
 }

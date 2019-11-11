@@ -17,7 +17,7 @@
     </div>
 
     <div class="synopsis">
-        <div>{{ place.content.synopsis }}</div>
+        <div [innerHtml]="place.content.synopsis"></div>
     </div>
 
     <app-gallery [photos]="place.content.photos"></app-gallery>
