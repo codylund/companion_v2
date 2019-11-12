@@ -23,6 +23,7 @@ $font-color: white;
 // Applied to container when root route is activated.
 .rootRoute {
     background-color: transparent;
+    position: absolute;
 }
 
 // Navigation item.

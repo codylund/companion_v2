@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Place } from 'src/main/shared/model';
 import { PlaceService } from '../../../core/service/place.service';
 import { DomSanitizer } from '@angular/platform-browser';

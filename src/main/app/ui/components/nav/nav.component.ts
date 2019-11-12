@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class NavComponent implements OnInit {
   isRootRoute = false;
 
   constructor(
-    private router: Router
+    router: Router
   ) { 
     // Listen for nav events to/from the root route.
     router.events.subscribe(event => {
