@@ -2,15 +2,13 @@
     <div class="header">Places</div>
 </div>
 
-<app-place-list-controller></app-place-list-controller>
-
 <div class="placeList">
     <div *ngFor="let place of places">
         <div class="place">
             <div class="thumbnail" [routerLink]="['/places/', place.metadata.id]"
                 [style.background-image]="getSanitizedUrl(place.content.photos[0].url)">
                 <h1>{{ place.metadata.title }}</h1>
-                <div class="metadata">
+                <div *ngIf="place.metadata.location" class="metadata">
                     <span>{{ place.metadata.location.toString() }}</span>
                 </div>
             </div>

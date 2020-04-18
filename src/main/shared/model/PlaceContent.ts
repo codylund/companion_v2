@@ -5,11 +5,15 @@ export class PlaceContent {
     body: string;
     photos: Photo[] = [];
 
-    constructor(json: any) {
-        this.synopsis = json.synopsis;
-        this.body = json.body;
+    static fromJSON(json: any): PlaceContent {
+        var content = new PlaceContent();
+        
+        content.synopsis = json.synopsis;
+        content.body = json.body;
         for (var photo of json.photos as any[]) {
-            this.photos.push(new Photo(photo.url, photo.caption))
+            content.photos.push(new Photo(photo.url, photo.caption))
         }
+
+        return content;
     }
 }

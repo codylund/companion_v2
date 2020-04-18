@@ -16,6 +16,10 @@ export class PlaceIndex<T> {
         this.places.get(key).push(item);
     }
 
+    clearPlaces() {
+        this.places.clear();
+    }
+
     private initKey(key: T): T {
         key = this.applyOptions(key);
 

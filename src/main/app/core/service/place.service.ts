@@ -123,7 +123,7 @@ export class PlaceService {
 
   getPlace(id: string) {
     return this.http.get(`${ environment.handlerEndpoint }/api/places/${ id }`)
-        .pipe(map(res => new Place(res)));
+        .pipe(map(Place.fromJSON));
   }
 
   private getLatestPage(pageIndex: number, filters: PlaceFilters): Observable<PlacePage>  {

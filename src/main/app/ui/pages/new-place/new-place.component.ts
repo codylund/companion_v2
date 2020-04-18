@@ -61,7 +61,7 @@ export class NewPlaceComponent implements OnInit {
   }
 
   preview() {
-    this.place = new Place({
+    this.place = Place.fromJSON({
       metadata: {
         id: this.id,
         title: this.title,
