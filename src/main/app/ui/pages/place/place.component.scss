@@ -78,7 +78,10 @@
         box-sizing: border-box;
         max-width: 960px;
 
-        margin: 32px auto;
+        margin-top: 32px;
+        margin-bottom: 0px;
+        margin-left: auto;
+        margin-right: auto;
 
         color: black;
         border-left: 8px solid $primary-color;
@@ -99,9 +102,9 @@
         width: 100%;
         max-width: 960px;
 
-        margin: auto;
-
-        //background-color: black;
+        margin-top: 32px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .header {

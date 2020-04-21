@@ -35,8 +35,10 @@ export class PageMetadatas {
      * @returns the title.
      */
     static forPlace(placeMetadata: PlaceMetadata): PageMetadata {
-        return {
-            title: `Visit ${placeMetadata.title} in ${placeMetadata.location.toString()}`
-        };
+        var title = `Visit ${placeMetadata.title}`;
+        if (placeMetadata.location) {
+            title += ` in ${placeMetadata.location.toString()}`;
+        }
+        return { title: title };
     }
 }

@@ -9,7 +9,11 @@ export class CompositePlaceIndex {
     private countryIndex = new PlaceIndex<string>(new IgnoreCaseIndexOption());
     private dateList = new Array<Place>();
 
-    constructor(places: Place[]) {
+    setPlaces(places: Place[]) {
+        this.idIndex.clearPlaces();
+        this.countryIndex.clearPlaces();
+        this.dateList = [];
+
         places.forEach((place) => {
             var metadata = place.metadata;
             
@@ -17,7 +21,9 @@ export class CompositePlaceIndex {
             this.idIndex.put(metadata.id, place);
             
             // Populate the by-country index.
-            this.countryIndex.put(metadata.location.country, place);
+            if (metadata.location != null) {
+                this.countryIndex.put(metadata.location.country, place);
+            }
 
             // Populate the by-date index.
             this.dateList.push(place);

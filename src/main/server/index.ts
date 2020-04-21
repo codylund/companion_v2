@@ -12,7 +12,7 @@ var config = ProcArgs.parseServerConfig();
 dotenv.config();
 console.log(process.env.FLICKR_API_KEY);
 
-var handlerFactory = new HandlerFactory(IndexFactory.initCompositIndex(config.content));
+var handlerFactory = new HandlerFactory(IndexFactory.initFlickrIndex("95025333@N08"));
 
 new ServerWrapper(
     config,

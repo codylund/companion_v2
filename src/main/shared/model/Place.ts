@@ -1,18 +1,28 @@
 import { PlaceContent } from './PlaceContent';
 import { PlaceMetadata } from './PlaceMetadata';
+import { Photo } from '.';
 
 export class Place {
     content: PlaceContent;
     metadata: PlaceMetadata;
 
-    constructor(json: any) {
-        this.content = new PlaceContent(json.content);
-        this.metadata = new PlaceMetadata(json.metadata);
+    constructor() {
+        this.content = new PlaceContent();
+        this.metadata = new PlaceMetadata();
+    }
+
+    static fromJSON(json: any) {
+        var place = new Place();
+        
+        place.content = PlaceContent.fromJSON(json.content);
+        place.metadata = PlaceMetadata.fromJSON(json.metadata);
+
+        return place;
     }
 
     static compareByDate(a: Place, b: Place): number {
-        return new Date(b.metadata.date).getTime()
-            - new Date(a.metadata.date).getTime();
+        return b.metadata.date.getTime()
+            - a.metadata.date.getTime();
     }
 
     static compareByTitle(a: Place, b: Place): number {

@@ -23,8 +23,8 @@ export class LandingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.pageMetadataService.post(PageMetadatas.default)
-    this.placeService.getPlace('gravel-growler').subscribe(place => this.highlight = place)
+    this.pageMetadataService.post(PageMetadatas.default);
+    this.placeService.getPlace("plum-island").subscribe(place => this.highlight = place);
   }
 
   getSanitizedUrl(url: string) {

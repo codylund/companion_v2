@@ -1,6 +1,5 @@
 import { RequestHandler } from 'express';
 import { HandlerProvider } from './HandlerProvider';
-import { FlickrPhotoAlbum } from '../flickr/FlickrPhotoAlbum';
 
 export class FlickrPhotoAlbumHandlerProvider implements HandlerProvider {
 
@@ -12,11 +11,11 @@ export class FlickrPhotoAlbumHandlerProvider implements HandlerProvider {
         return (req, res) => {
             var albumId = this.parseAlbumId(req.query);
 
-            FlickrPhotoAlbum.get(albumId).then(photos => {
-                res.json(photos);
-            }).catch(reason => {
-                throw new Error(reason);
-            })
+            // FlickrPhotoAlbum.get(albumId).then(photos => {
+            //     res.json(photos);
+            // }).catch(reason => {
+            //     throw new Error(reason);
+            // })
         };
     }
 

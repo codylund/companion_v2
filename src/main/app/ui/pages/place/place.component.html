@@ -6,7 +6,7 @@
         <div class="text title">{{ place.metadata.title }}</div>
 
         <!-- Location -->
-        <div class="text location">    
+        <div *ngIf="place.metadata.location" class="text location">    
             <i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ place.metadata.location.url }}">{{ place.metadata.location.toString() }}</a>
         </div>
         
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="synopsis">
+    <div *ngIf="place.content.synopsis" class="synopsis">
         <div [innerHtml]="place.content.synopsis"></div>
     </div>
 

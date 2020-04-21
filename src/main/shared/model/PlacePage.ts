@@ -8,6 +8,6 @@ export class PlacePage {
     constructor(json: any) {
         this.pageIndex = json.pageIndex,
         this.totalPages = json.totalPages,
-        this.places = json.places.map((place: any) => new Place(place))
+        this.places = json.places.map(Place.fromJSON)
     }
 }
