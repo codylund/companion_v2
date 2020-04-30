@@ -27,7 +27,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MarkdownModule } from 'ngx-markdown';
 import { LandingComponent } from './ui/pages/landing/landing.component';
-import { InstagramHighlightComponent } from './ui/components/media/instagram-highlight/instagram-highlight.component';
 import { BlogComponent } from './ui/pages/blog/view/blog.component';
 import { BlogBuilderComponentComponent } from './ui/pages/blog/build-component/blog-builder-component.component';
 import { BlogBuilderComponent } from './ui/pages/blog/build/blog-builder.component';
@@ -46,7 +45,6 @@ import { EmailFormComponent } from './ui/components/email-form/email-form.compon
     PlaceListControllerComponent,
     NewPlaceComponent,
     LandingComponent,
-    InstagramHighlightComponent,
     BlogBuilderComponent,
     BlogBuilderComponentComponent,
     EmailFormComponent,

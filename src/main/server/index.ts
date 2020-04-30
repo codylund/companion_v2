@@ -3,8 +3,6 @@ import { HandlerFactory } from './handlers/HandlerFactory';
 import { ServerWrapper } from './ServerWrapper';
 import { MiddlewareProvider } from './MiddlewareProvider';
 import { ProcArgs } from './ProcArgs';
-import { schedule }  from 'node-cron';
-import { pullInstagramHighlights } from './jobs/InstagramJob';
 import * as dotenv from 'dotenv';
 
 var config = ProcArgs.parseServerConfig();
@@ -20,6 +18,3 @@ new ServerWrapper(
     handlerFactory.GET(),
     handlerFactory.POST()
 ).start();
-
-pullInstagramHighlights('c_dyl_nd');
-schedule("0 * * * *", () => pullInstagramHighlights('c_dyl_nd'));
