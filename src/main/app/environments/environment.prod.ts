@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  handlerEndpoint: "https://wasteyourtwenties.com"
+  handlerEndpoint: "https://codylund.com"
 };
